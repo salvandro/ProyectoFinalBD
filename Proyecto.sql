@@ -7,6 +7,7 @@ USE EXPLORACION_ESPACIAL;
 # del problema, serán insertados en esta tabla.
 CREATE TABLE IF NOT EXISTS Planeta
 (
+    codigo        INT        , # es el código del planeta.
     nombre        VARCHAR(30), # es el nombre del planeta.
     distancia_sol FLOAT        # es la distancia entre el planeta y su sol.
 ) ENGINE = InnoDB;
@@ -16,13 +17,15 @@ CREATE TABLE IF NOT EXISTS Planeta
 # del problema.
 CREATE TABLE IF NOT EXISTS Luna
 (
-    nombre VARCHAR(30) # es el nombre de la luna.
+    codigo INT        , # es el código de la luna.
+    nombre VARCHAR(30)  # es el nombre de la luna.
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada uno de los soles que poseen
 # cada uno de los planetas dentro del problema.
 CREATE TABLE IF NOT EXISTS Sol
 (
+    codigo               INT        , # es el código del sol.
     nombre               VARCHAR(30), # es el nombre del sol.
     tipo                 VARCHAR(30), # el tipo de sol.
     tiempo_vida          DATE       , # es el tiempo de vida que tiene el sol.
@@ -43,7 +46,8 @@ CREATE TABLE IF NOT EXISTS Federacion
 # formados por planetas, lunas y soles.
 CREATE TABLE IF NOT EXISTS Sistema_Solar
 (
-    nombre VARCHAR(30) # es el nombre del sistema solar.
+    codigo INT        , # es el código del sistema solar.
+    nombre VARCHAR(30)  # es el nombre del sistema solar.
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las galaxias dentro
@@ -51,7 +55,8 @@ CREATE TABLE IF NOT EXISTS Sistema_Solar
 # sistemas solares.
 CREATE TABLE IF NOT EXISTS Galaxia
 (
-    nombre VARCHAR(30) # es el nombre de la galaxia.
+    codigo INT        , # es el código de la galaxia.
+    nombre VARCHAR(30)  # es el nombre de la galaxia.
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las sustancias de las
@@ -64,7 +69,8 @@ CREATE TABLE IF NOT EXISTS Galaxia
 # un lista de todas esas sustancias.
 CREATE TABLE IF NOT EXISTS Sustancia
 (
-    nombre_cientifico VARCHAR(30) # es el nombre científico de la sustancia.
+    codigo            INT        , # es el código de la sustancia.
+    nombre_cientifico VARCHAR(30)  # es el nombre científico de la sustancia.
 ) ENGINE = InnoDB;
 
 # Esta tabla representa los estados en los que se pueden
@@ -77,7 +83,8 @@ CREATE TABLE IF NOT EXISTS Sustancia
 # del diagrama entidad-relación, se hace uso de esta tabla.
 CREATE TABLE IF NOT EXISTS Estado_Sustancia
 (
-    nombre VARCHAR(30) # es el nombre del estado en el que se puede encuentrar una sustancia.
+    codigo INT        , # es el código del estado en el que se puede encontrar una sustancia.
+    nombre VARCHAR(30)  # es el nombre del estado en el que se puede encontrar una sustancia.
 ) ENGINE = InnoDB;
 
 # Ya que cada planeta, luna o sol, puede presentar
@@ -86,7 +93,8 @@ CREATE TABLE IF NOT EXISTS Estado_Sustancia
 # los planetas, lunas y soles dentro del problema.
 CREATE TABLE IF NOT EXISTS Area
 (
-    nombre VARCHAR(30) # es el nombre del área.
+    codigo INT        , # es el código del área que posee un planeta.
+    nombre VARCHAR(30)  # es el nombre del área que posee un planeta..
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las plantas que pueden
@@ -98,7 +106,8 @@ CREATE TABLE IF NOT EXISTS Area
 # de todas esas plantas.
 CREATE TABLE IF NOT EXISTS Planta
 (
-    nombre_cientifico VARCHAR(30) # es el nombre científico de la planta.
+    codigo            INT        , # es el código de una planta.
+    nombre_cientifico VARCHAR(30)  # es el nombre científico de la planta.
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las especies animales
@@ -110,6 +119,7 @@ CREATE TABLE IF NOT EXISTS Planta
 # un listado de todas esas especies animales.
 CREATE TABLE IF NOT EXISTS Especie_Animal
 (
+    codigo              INT        , # es el código de una especia animal.
     nombre_cientifico   VARCHAR(30), # es el nombre científico de la especie animal.
     numero_extremidades INT        , # es el número de extremidades que posee la especie animal.
     numero_ojos         INT          # es el número de ojos que posee la especie animal.
@@ -125,6 +135,7 @@ CREATE TABLE IF NOT EXISTS Especie_Animal
 # lenguajes.
 CREATE TABLE IF NOT EXISTS Lenguaje
 (
+    codigo INT        , # es el código de un lenguaje.
     nombre VARCHAR(30), # es el nombre del lenguaje.
     tipo   VARCHAR(30)  # es el tipo de lenguaje.
 ) ENGINE = InnoDB;
