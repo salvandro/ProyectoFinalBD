@@ -15,15 +15,14 @@ CREATE TABLE IF NOT EXISTS Sol
     PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
-# Esta tabla representa un planeta en particular.
-# Cada uno de los planetas que se encuentren dentro
-# del problema, serán insertados en esta tabla.
+# Esta tabla representa cada uno de los planetas 
+# que se encuentren dentro del problema.
 CREATE TABLE IF NOT EXISTS Planeta
 (
-    codigo        INT        , # es el código del planeta.
-    codigo_sol    INT        , # es el código del sol que posee el planeta.
-    nombre        VARCHAR(30), # es el nombre del planeta.
-    distancia_sol FLOAT      , # es la distancia entre el planeta y su sol.
+    codigo        INT         AUTO_INCREMENT, # es el código del planeta.
+    codigo_sol    INT         NOT NULL      , # es el código del sol que posee el planeta.
+    nombre        VARCHAR(30) NOT NULL      , # es el nombre del planeta.
+    distancia_sol FLOAT       NULL          , # es la distancia entre el planeta y su sol.
 
     PRIMARY KEY (codigo),
 
