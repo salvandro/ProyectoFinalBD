@@ -8,7 +8,7 @@ USE EXPLORACION_ESPACIAL;
 CREATE TABLE IF NOT EXISTS Planeta
 (
     nombre        VARCHAR(30), # es el nombre del planeta.
-    distancia_sol FLOAT,       # es la distancia entre el planeta y su sol.
+    distancia_sol FLOAT      , # es la distancia entre el planeta y su sol.
 );
 
 # Esta tabla representa cada una de las lunas
