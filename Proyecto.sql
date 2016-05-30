@@ -67,6 +67,19 @@ CREATE TABLE IF NOT EXISTS Sustancia
     nombre_cientifico VARCHAR(30) # es el nombre científico de la sustancia.
 );
 
+# Esta tabla representa los estados en los que se pueden
+# encontrar cda una de las sustancias que componen los
+# planetas, lunas y soles dentro del problema.
+#
+# Ya que una de las restricciones para la realización del modelo
+# relacional es que está prohibido hacer uso de disparadores que
+# que validen condiciones que pueden especificarse en el diseño
+# del diagrama entidad-relación, se hace uso de esta tabla.
+CREATE TABLE IF NOT EXISTS Estado_Sustancia
+(
+    nombre VARCHAR(30)
+);
+
 # Ya que cada planeta, luna o sol, puede presentar
 # distinta composición en cada una de sus áreas, esta tabla
 # representa cada una de las áreas que poseen cada uno de
