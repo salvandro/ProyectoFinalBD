@@ -142,7 +142,9 @@ CREATE TABLE IF NOT EXISTS Sistema_Solar_tiene_Planeta
 CREATE TABLE IF NOT EXISTS Galaxia
 (
     codigo INT        , # es el código de la galaxia.
-    nombre VARCHAR(30)  # es el nombre de la galaxia.
+    nombre VARCHAR(30), # es el nombre de la galaxia.
+
+    PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
 # Esta tabla representa la relación que hay entre las entidades
