@@ -59,6 +59,29 @@ CREATE TABLE IF NOT EXISTS Area
     PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
+# Esta tabla representa la relación que hay entre
+# las entidades Planeta y Área.
+#
+# En esta tabla se insertan los códigos del planeta
+# y las áreas que lo conforman.
+CREATE TABLE IF NOT EXISTS Planeta_tiene_Area
+(
+    codigo_planeta INT NOT NULL, # es el código del planeta.
+    codigo_area    INT NOT NULL, # es el códigos de las áreas que conforman el planeta.
+
+    PRIMARY KEY (codigo_planeta, codigo_area),
+
+    FOREIGN KEY (codigo_planeta)
+        REFERENCES Planeta (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_area)
+        REFERENCES Area (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
 # Esta tabla representa cada una de las lunas
 # que poseen cada uno de los planetas dentro
 # del problema.
