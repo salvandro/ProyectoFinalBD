@@ -98,8 +98,8 @@ CREATE TABLE IF NOT EXISTS Planta
 CREATE TABLE IF NOT EXISTS Especie_Animal
 (
     nombre_cientifico   VARCHAR(30), # es el nombre científico de la especie animal.
-    numero_extremidades int        , # es el número de extremidades que posee la especie animal.
-    numero_ojos         int          # es el número de ojos que posee la especie animal.
+    numero_extremidades INT        , # es el número de extremidades que posee la especie animal.
+    numero_ojos         INT          # es el número de ojos que posee la especie animal.
 );
 
 # Esta tabla representa cada uno de los lenguajes
