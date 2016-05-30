@@ -2,12 +2,24 @@ DROP DATABASE IF EXISTS EXPLORACION_ESPACIAL;
 CREATE DATABASE IF NOT EXISTS EXPLORACION_ESPACIAL;
 USE EXPLORACION_ESPACIAL;
 
+# Esta tabla representa cada uno de los soles que poseen
+# cada uno de los planetas dentro del problema.
+CREATE TABLE IF NOT EXISTS Sol
+(
+    codigo               INT        , # es el código del sol.
+    nombre               VARCHAR(30), # es el nombre del sol.
+    tipo                 VARCHAR(30), # el tipo de sol.
+    tiempo_vida          DATE       , # es el tiempo de vida que tiene el sol.
+    tiempo_restante_vida DATE         # es el tiempo de vida restante que tiene el sol.
+) ENGINE = InnoDB;
+
 # Esta tabla representa un planeta en particular.
 # Cada uno de los planetas que se encuentren dentro
 # del problema, serán insertados en esta tabla.
 CREATE TABLE IF NOT EXISTS Planeta
 (
     codigo        INT        , # es el código del planeta.
+    codigo_sol    INT        , # es el código del sol que posee el planeta.
     nombre        VARCHAR(30), # es el nombre del planeta.
     distancia_sol FLOAT      , # es la distancia entre el planeta y su sol.
 
@@ -26,7 +38,7 @@ CREATE TABLE IF NOT EXISTS Luna
 ) ENGINE = InnoDB;
 
 # Esta tabla representa la relación que hay entre las
-# entidades Plane y Luna.
+# entidades Planeta y Luna.
 #
 # En esta tabla se insertan los códigos del planeta
 # y las lunas que posee.
@@ -46,17 +58,6 @@ CREATE TABLE IF NOT EXISTS Plane_tiene_Luna
         REFERENCES Luna (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
-) ENGINE = InnoDB;
-
-# Esta tabla representa cada uno de los soles que poseen
-# cada uno de los planetas dentro del problema.
-CREATE TABLE IF NOT EXISTS Sol
-(
-    codigo               INT        , # es el código del sol.
-    nombre               VARCHAR(30), # es el nombre del sol.
-    tipo                 VARCHAR(30), # el tipo de sol.
-    tiempo_vida          DATE       , # es el tiempo de vida que tiene el sol.
-    tiempo_restante_vida DATE         # es el tiempo de vida restante que tiene el sol.
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las federaciones
