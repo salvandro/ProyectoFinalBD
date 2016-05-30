@@ -179,8 +179,10 @@ CREATE TABLE IF NOT EXISTS Galaxia_tiene_Sistema_Solar
 # un lista de todas esas sustancias.
 CREATE TABLE IF NOT EXISTS Sustancia
 (
-    codigo            INT        , # es el código de la sustancia.
-    nombre_cientifico VARCHAR(30)  # es el nombre científico de la sustancia.
+    codigo            INT         AUTO_INCREMENT, # es el código de la sustancia.
+    nombre_cientifico VARCHAR(30) NOT NULL      , # es el nombre científico de la sustancia.
+
+    PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
 # Esta tabla representa los estados en los que se pueden
