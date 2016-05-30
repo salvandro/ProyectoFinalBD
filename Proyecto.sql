@@ -9,7 +9,9 @@ CREATE TABLE IF NOT EXISTS Planeta
 (
     codigo        INT        , # es el código del planeta.
     nombre        VARCHAR(30), # es el nombre del planeta.
-    distancia_sol FLOAT        # es la distancia entre el planeta y su sol.
+    distancia_sol FLOAT      , # es la distancia entre el planeta y su sol.
+
+    PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las lunas
@@ -18,7 +20,32 @@ CREATE TABLE IF NOT EXISTS Planeta
 CREATE TABLE IF NOT EXISTS Luna
 (
     codigo INT        , # es el código de la luna.
-    nombre VARCHAR(30)  # es el nombre de la luna.
+    nombre VARCHAR(30), # es el nombre de la luna.
+
+    PRIMARY KEY (codigo)
+) ENGINE = InnoDB;
+
+# Esta tabla representa la relación que hay entre las
+# entidades Plane y Luna.
+#
+# En esta tabla se insertan los códigos del planeta
+# y las lunas que posee.
+CREATE TABLE IF NOT EXISTS Plane_tiene_Luna
+(
+    codigo_planeta INT, # es el código del planeta.
+    codigo_luna    INT, # es el código de la luna que posee el planeta.
+
+    PRIMARY KEY (codigo_planeta, codigo_luna),
+
+    FOREIGN KEY (codigo_planeta)
+        REFERENCES Planeta (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_luna)
+        REFERENCES Luna (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada uno de los soles que poseen
