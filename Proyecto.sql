@@ -10,7 +10,9 @@ CREATE TABLE IF NOT EXISTS Sol
     nombre               VARCHAR(30), # es el nombre del sol.
     tipo                 VARCHAR(30), # el tipo de sol.
     tiempo_vida          DATE       , # es el tiempo de vida que tiene el sol.
-    tiempo_restante_vida DATE         # es el tiempo de vida restante que tiene el sol.
+    tiempo_restante_vida DATE,        # es el tiempo de vida restante que tiene el sol.
+
+    PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
 # Esta tabla representa un planeta en particular.
@@ -23,7 +25,12 @@ CREATE TABLE IF NOT EXISTS Planeta
     nombre        VARCHAR(30), # es el nombre del planeta.
     distancia_sol FLOAT      , # es la distancia entre el planeta y su sol.
 
-    PRIMARY KEY (codigo)
+    PRIMARY KEY (codigo),
+
+    FOREIGN KEY (codigo_sol)
+        REFERENCES Sol (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las lunas
