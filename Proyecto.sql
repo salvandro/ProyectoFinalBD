@@ -6,11 +6,11 @@ USE EXPLORACION_ESPACIAL;
 # cada uno de los planetas dentro del problema.
 CREATE TABLE IF NOT EXISTS Sol
 (
-    codigo               INT        , # es el código del sol.
-    nombre               VARCHAR(30), # es el nombre del sol.
-    tipo                 VARCHAR(30), # el tipo de sol.
-    tiempo_vida          DATE       , # es el tiempo de vida que tiene el sol.
-    tiempo_restante_vida DATE,        # es el tiempo de vida restante que tiene el sol.
+    codigo               INT         AUTO_INCREMENT, # es el código del sol.
+    nombre               VARCHAR(30) NOT NULL      , # es el nombre del sol.
+    tipo                 VARCHAR(30) NOT NULL      , # el tipo de sol.
+    tiempo_vida          DATE NULL                 , # es el tiempo de vida que tiene el sol.
+    tiempo_restante_vida DATE NULL                 , # es el tiempo de vida restante que tiene el sol.
 
     PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
