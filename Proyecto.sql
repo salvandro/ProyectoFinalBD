@@ -145,6 +145,29 @@ CREATE TABLE IF NOT EXISTS Galaxia
     nombre VARCHAR(30)  # es el nombre de la galaxia.
 ) ENGINE = InnoDB;
 
+# Esta tabla representa la relación que hay entre las entidades
+# Galaxi y Sistema_Solar.
+#
+# En esta tabla se insertan los códigos de la galaxia y los
+# sistemas solares que la conforman.
+CREATE TABLE IF NOT EXISTS Galaxia_tiene_Sistema_Solar
+(
+    codigo_galaxia       INT, # es el código de la galaxia.
+    codigo_sistema_solar INT, # es el codigo de los sistemas solares que conforman la galaxia.
+
+    PRIMARY KEY (codigo_galaxia, codigo_sistema_solar),
+
+    FOREIGN KEY (codigo_galaxia)
+        REFERENCES Galaxia (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_sistema_solar)
+        REFERENCES Sistema_Solar (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
 # Esta tabla representa cada una de las sustancias de las
 # cuales están compuestos los distintos planetas, lunas y
 # soles del problema.
