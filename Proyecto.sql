@@ -47,6 +47,18 @@ CREATE TABLE IF NOT EXISTS Planeta
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
+# Ya que cada planeta, luna o sol, puede presentar
+# distinta composición en cada una de sus áreas, esta tabla
+# representa cada una de las áreas que poseen cada uno de
+# los planetas, lunas y soles dentro del problema.
+CREATE TABLE IF NOT EXISTS Area
+(
+    codigo INT         AUTO_INCREMENT, # es el código del área que posee un planeta.
+    nombre VARCHAR(30) NOT NULL      , # es el nombre del área que posee un planeta.
+
+    PRIMARY KEY (codigo)
+) ENGINE = InnoDB;
+
 # Esta tabla representa cada una de las lunas
 # que poseen cada uno de los planetas dentro
 # del problema.
@@ -212,18 +224,6 @@ CREATE TABLE IF NOT EXISTS Estado_Sustancia
 (
     codigo INT         AUTO_INCREMENT, # es el código del estado en el que se puede encontrar una sustancia.
     nombre VARCHAR(30) NOT NULL      , # es el nombre del estado en el que se puede encontrar una sustancia.
-
-    PRIMARY KEY (codigo)
-) ENGINE = InnoDB;
-
-# Ya que cada planeta, luna o sol, puede presentar
-# distinta composición en cada una de sus áreas, esta tabla
-# representa cada una de las áreas que poseen cada uno de
-# los planetas, lunas y soles dentro del problema.
-CREATE TABLE IF NOT EXISTS Area
-(
-    codigo INT         AUTO_INCREMENT, # es el código del área que posee un planeta.
-    nombre VARCHAR(30) NOT NULL      , # es el nombre del área que posee un planeta.
 
     PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
