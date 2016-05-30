@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS Sustancia
 # del diagrama entidad-relación, se hace uso de esta tabla.
 CREATE TABLE IF NOT EXISTS Estado_Sustancia
 (
-    nombre VARCHAR(30)
+    nombre VARCHAR(30) # es el nombre del estado en el que se puede encuentrar una sustancia.
 );
 
 # Ya que cada planeta, luna o sol, puede presentar
