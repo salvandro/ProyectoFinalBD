@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS Planeta
 (
     nombre        VARCHAR(30), # es el nombre del planeta.
     distancia_sol FLOAT        # es la distancia entre el planeta y su sol.
-);
+) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las lunas
 # que poseen cada uno de los planetas dentro
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS Planeta
 CREATE TABLE IF NOT EXISTS Luna
 (
     nombre VARCHAR(30) # es el nombre de la luna.
-);
+) ENGINE = InnoDB;
 
 # Esta tabla representa cada uno de los soles que poseen
 # cada uno de los planetas dentro del problema.
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS Sol
     tipo                 VARCHAR(30), # el tipo de sol.
     tiempo_vida          DATE       , # es el tiempo de vida que tiene el sol.
     tiempo_restante_vida DATE         # es el tiempo de vida restante que tiene el sol.
-);
+) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las federaciones
 # dentro del problema, las cuales se encuentran formadas
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS Federacion
 (
     codigo INT        , # es el código de la federación.
     nombre VARCHAR(30)  # es el nombre de la federación.
-);
+) ENGINE = InnoDB;
 
 # Esta tabla representa cada uno de los sistemas
 # solares dentro del problema, los cuales se encuentran
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS Federacion
 CREATE TABLE IF NOT EXISTS Sistema_Solar
 (
     nombre VARCHAR(30) # es el nombre del sistema solar.
-);
+) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las galaxias dentro
 # del problema, las cuales se encuentran formadas por
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS Sistema_Solar
 CREATE TABLE IF NOT EXISTS Galaxia
 (
     nombre VARCHAR(30) # es el nombre de la galaxia.
-);
+) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las sustancias de las
 # cuales están compuestos los distintos planetas, lunas y
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS Galaxia
 CREATE TABLE IF NOT EXISTS Sustancia
 (
     nombre_cientifico VARCHAR(30) # es el nombre científico de la sustancia.
-);
+) ENGINE = InnoDB;
 
 # Esta tabla representa los estados en los que se pueden
 # encontrar cda una de las sustancias que componen los
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS Sustancia
 CREATE TABLE IF NOT EXISTS Estado_Sustancia
 (
     nombre VARCHAR(30) # es el nombre del estado en el que se puede encuentrar una sustancia.
-);
+) ENGINE = InnoDB;
 
 # Ya que cada planeta, luna o sol, puede presentar
 # distinta composición en cada una de sus áreas, esta tabla
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS Estado_Sustancia
 CREATE TABLE IF NOT EXISTS Area
 (
     nombre VARCHAR(30) # es el nombre del área.
-);
+) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las plantas que pueden
 # existir en cada uno de los planetas y lunas dentro del 
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS Area
 CREATE TABLE IF NOT EXISTS Planta
 (
     nombre_cientifico VARCHAR(30) # es el nombre científico de la planta.
-);
+) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las especies animales
 # que pueden existir en cada uno de los planetas y lunas
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS Especie_Animal
     nombre_cientifico   VARCHAR(30), # es el nombre científico de la especie animal.
     numero_extremidades INT        , # es el número de extremidades que posee la especie animal.
     numero_ojos         INT          # es el número de ojos que posee la especie animal.
-);
+) ENGINE = InnoDB;
 
 # Esta tabla representa cada uno de los lenguajes
 # que se pueden hablar en cada uno de los planetas
@@ -127,4 +127,4 @@ CREATE TABLE IF NOT EXISTS Lenguaje
 (
     nombre VARCHAR(30), # es el nombre del lenguaje.
     tipo   VARCHAR(30)  # es el tipo de lenguaje.
-);
+) ENGINE = InnoDB;
