@@ -34,8 +34,8 @@ CREATE TABLE IF NOT EXISTS Sol
 # por planetas.
 CREATE TABLE IF NOT EXISTS Federacion
 (
-    int    codigo,     # es el código de la federación.
-    nombre VARCHAR(30) # es el nombre de la federación.
+    codigo INT        , # es el código de la federación.
+    nombre VARCHAR(30)  # es el nombre de la federación.
 );
 
 # Esta tabla representa cada uno de los sistemas
