@@ -78,6 +78,12 @@ CREATE TABLE IF NOT EXISTS Federacion
     PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
+
+# Esta tabla representa la relación que hay entre las entidades
+# Federación y Planeta.
+#
+# En esta tabla se insertan los códigos de la federación y
+# de los planetas que la conforman.
 CREATE TABLE Federacion_tiene_Planeta
 (
     codigo_federacion INT,
