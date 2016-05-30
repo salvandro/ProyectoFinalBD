@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS Luna
 #
 # En esta tabla se insertan los códigos del planeta
 # y las lunas que posee.
-CREATE TABLE IF NOT EXISTS Plane_tiene_Luna
+CREATE TABLE IF NOT EXISTS Planeta_tiene_Luna
 (
     codigo_planeta INT, # es el código del planeta.
     codigo_luna    INT, # es el código de la luna que posee el planeta.
