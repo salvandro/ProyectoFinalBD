@@ -84,10 +84,10 @@ CREATE TABLE IF NOT EXISTS Federacion
 #
 # En esta tabla se insertan los códigos de la federación y
 # de los planetas que la conforman.
-CREATE TABLE Federacion_tiene_Planeta
+CREATE TABLE  IF NOT EXISTS Federacion_tiene_Planeta
 (
-    codigo_federacion INT,
-    codigo_planeta    INT,
+    codigo_federacion INT, # es el código de la federación.
+    codigo_planeta    INT, # es el código de los planetas que conforman la federación.
 
     PRIMARY KEY (codigo_federacion, codigo_planeta),
 
