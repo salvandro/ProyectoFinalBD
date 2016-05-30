@@ -73,7 +73,27 @@ CREATE TABLE IF NOT EXISTS Planeta_tiene_Luna
 CREATE TABLE IF NOT EXISTS Federacion
 (
     codigo INT        , # es el código de la federación.
-    nombre VARCHAR(30)  # es el nombre de la federación.
+    nombre VARCHAR(30), # es el nombre de la federación.
+
+    PRIMARY KEY (codigo)
+) ENGINE = InnoDB;
+
+CREATE TABLE Federacion_tiene_Planeta
+(
+    codigo_federacion INT,
+    codigo_planeta    INT,
+
+    PRIMARY KEY (codigo_federacion, codigo_planeta),
+
+    FOREIGN KEY (codigo_federacion)
+        REFERENCES Federacion (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_planeta)
+        REFERENCES Planeta (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada uno de los sistemas
