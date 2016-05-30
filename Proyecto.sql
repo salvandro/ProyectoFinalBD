@@ -108,7 +108,32 @@ CREATE TABLE  IF NOT EXISTS Federacion_tiene_Planeta
 CREATE TABLE IF NOT EXISTS Sistema_Solar
 (
     codigo INT        , # es el código del sistema solar.
-    nombre VARCHAR(30)  # es el nombre del sistema solar.
+    nombre VARCHAR(30), # es el nombre del sistema solar.
+
+    PRIMARY KEY (codigo)
+) ENGINE = InnoDB;
+
+# Esta tabla representa la relación que hay entre las entidades
+# Sistema_Solar y Planeta.
+#
+# En esta tabla se insertan loc códigos del sistema solar
+# y los planetas que lo conforman.
+CREATE TABLE IF NOT EXISTS Sistema_Solar_tiene_Planeta
+(
+    codigo_sistema_solar INT, # es el código del sistema solar.
+    codigo_planeta       INT, # es el código del planeta que pertenece al sistema solar.
+
+    PRIMARY KEY (codigo_sistema_solar, codigo_planeta),
+
+    FOREIGN KEY (codigo_sistema_solar)
+        REFERENCES Sistema_solar (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_planeta)
+        REFERENCES Planeta (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las galaxias dentro
