@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS EXPLORACION_ESPACIAL;
 USE EXPLORACION_ESPACIAL;
 
 # Esta tabla representa los tipos de soles que
-# puede haber.
+# puede haber dentro del problema.
 CREATE TABLE IF NOT EXISTS Tipo_Sol
 (
     codigo INT         AUTO_INCREMENT, # es el código del tipo de sol.
@@ -12,15 +12,15 @@ CREATE TABLE IF NOT EXISTS Tipo_Sol
     PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
-# Esta tabla representa cada uno de los soles que poseen
+# Esta tabla representa los soles que poseen
 # cada uno de los planetas dentro del problema.
 CREATE TABLE IF NOT EXISTS Sol
 (
     codigo               INT         AUTO_INCREMENT, # es el código del sol.
-    codigo_tipo_sol      INT         NOT NULL      , # es el código del tipo de sol.
     nombre               VARCHAR(30) NOT NULL      , # es el nombre del sol.
     tiempo_vida          DATE NULL                 , # es el tiempo de vida que tiene el sol.
     tiempo_restante_vida DATE NULL                 , # es el tiempo de vida restante que tiene el sol.
+    codigo_tipo_sol      INT         NOT NULL      , # es el código del tipo de sol.
 
     PRIMARY KEY (codigo),
 
@@ -35,9 +35,9 @@ CREATE TABLE IF NOT EXISTS Sol
 CREATE TABLE IF NOT EXISTS Planeta
 (
     codigo        INT         AUTO_INCREMENT, # es el código del planeta.
-    codigo_sol    INT         NOT NULL      , # es el código del sol que tiene el planeta.
     nombre        VARCHAR(30) NOT NULL      , # es el nombre del planeta.
     distancia_sol FLOAT       NULL          , # es la distancia entre el planeta y su sol.
+    codigo_sol    INT         NOT NULL      , # es el código del sol que tiene el planeta.
 
     PRIMARY KEY (codigo),
 

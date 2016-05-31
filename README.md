@@ -1,7 +1,14 @@
 # Entidades
 
-1. Tipo_Sol
-2. Sol
+1. Tipo_Sol<span class="octicon octicon-check"></span><br />
+   * codigo<span class="octicon octicon-check"></span>
+   * nombre<span class="octicon octicon-check"></span>
+2. Sol<span class="octicon octicon-check"></span><br />
+   * codigo<span class="octicon octicon-check"></span>
+   * nombre<span class="octicon octicon-check"></span>
+   * tiempo_vida<span class="octicon octicon-check"></span>
+   * tiempo_vida_restante<span class="octicon octicon-check"></span>
+   * codigo_tipo_sol<span class="octicon octicon-check"></span>
 3. Planeta
 4. Area
 5. Luna
@@ -30,7 +37,10 @@
 28. Tipo_Proyecto
 
 # Relaciones
-<pre>1. [  Sol  ]0&gt;---------------&lt; es  &gt;---------------|0[Tipo_Sol]
-2. [Planeta]0&gt;---------------&lt;tiene&gt;---------------|0[Sol]
-3. [Planeta]||---------------&lt;tiene&gt;---------------&lt;0[Area]
-4. [Planeta]||---------------&lt;tiene&gt;---------------&lt;0[Luna]</pre>
+
+<pre>1. [   Sol    ]0&gt;---------------&lt; es  &gt;---------------|0[Tipo_Sol]
+2. [ Planeta  ]0&gt;---------------&lt;tiene&gt;---------------|0[Sol]
+3. [ Planeta  ]||---------------&lt;tiene&gt;---------------&lt;0[Area]
+4. [ Planeta  ]||---------------&lt;tiene&gt;---------------&lt;0[Luna]
+5. [Federacion]0|---------------&lttiene&gt;---------------&lt;0[Planeta]
+6. [ Galaxia  ]0&gt;---------------&lt;tiene&gt;---------------&lt;0[Planeta]</pre>
