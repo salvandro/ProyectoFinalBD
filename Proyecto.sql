@@ -283,6 +283,16 @@ CREATE TABLE IF NOT EXISTS Especie_Animal
     PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
+# Esta tabla representa una parte del cuerpo de alguna
+# especie animal
+CREATE TABLE IF NOT EXISTS Parte_Cuerpo
+(
+    codigo INT         AUTO_INCREMENT, # es el código de la parte del cuerpo.
+    nombre VARCHAR(30) NOT NULL      , # es el nombre de la parte del cuerpo.
+
+    PRIMARY KEY (codigo)
+) ENGINE = InnoDB;
+
 # Esta tabla representa cada uno de los lenguajes
 # que se pueden hablar en cada uno de los planetas
 # y lunas.
@@ -293,7 +303,81 @@ CREATE TABLE IF NOT EXISTS Especie_Animal
 # lenguajes.
 CREATE TABLE IF NOT EXISTS Lenguaje
 (
-    codigo INT        , # es el código del lenguaje.
-    nombre VARCHAR(30), # es el nombre del lenguaje.
-    tipo   VARCHAR(30)  # es el tipo de lenguaje.
+    codigo INT AUTO_INCREMENT, # es el código del lenguaje.
+
+    PRIMARY KEY (codigo)
+) ENGINE = InnoDB;
+
+# Esta tabla representa a los lenguajes que se llevan
+# a cabo mediante señas o gestos.
+CREATE TABLE IF NOT EXISTS Lenguaje_Gestos
+(
+    codigo_lenguaje INT         NOT NULL, # es el código del lenguaje.
+    nombre          VARCHAR(30) NOT NULL, # es el nombre del lenguaje.
+
+    PRIMARY KEY (codigo_lenguaje),
+
+    FOREIGN KEY (codigo_lenguaje)
+        REFERENCES Lenguaje (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+# Esta tabla representa a los lenguajes que se llevan
+# a cabo emitiendo alguna especie de sonido.
+CREATE TABLE IF NOT EXISTS Lenguaje_Sonidos
+(
+    codigo_lenguaje INT         NOT NULL, # es el código del lenguaje.
+    Nombre          VARCHAR(30) NOT NULL, # es el nombre del lenguaje.
+
+    PRIMARY KEY (codigo_lenguaje),
+
+    FOREIGN KEY (codigo_lenguaje)
+        REFERENCES Lenguaje (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+# Esta tabla representa a los lenguajes que se llevan a cabo
+# mediante la escritura.
+CREATE TABLE IF NOT EXISTS Lenguaje_Escrito
+(
+    codigo_lenguaje INT NOT NULL, # es el código del lenguaje.
+
+    PRIMARY KEY (codigo_lenguaje),
+
+    FOREIGN KEY (codigo_lenguaje)
+        REFERENCES Lenguaje (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+# Esta tabla representa los lenguajes escritos que tienen
+# una pronunciación fonética.
+CREATE TABLE IF NOT EXISTS Lenguaje_Escrito_Fonetico
+(
+    codigo_lenguaje_escrito INT         NOT NULL, # es el código del lenguaje escrito
+    nombre                  VARCHAR(30) NOT NULL, # es el nombre del lenguaje escrito con pronunciación fonética.
+
+    PRIMARY KEY (codigo_lenguaje_escrito),
+
+    FOREIGN KEY (codigo_lenguaje_escrito)
+        REFERENCES Lenguaje_Escrito (codigo_lenguaje)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+# Esta tabla representa a los lenguajes escritos que se
+# llevan a cabo mediante pictografías.
+CREATE TABLE IF NOT EXISTS Lenguaje_Escrito_Pictografico
+(
+    codigo_lenguaje_escrito INT         NOT NULL, # es el código del lenguaje escrito.
+    nombre                  VARCHAR(30) NOT NULL, # es el nombre del lenguaje escrito que tiene una representación pictográfica.
+
+    PRIMARY KEY (codigo_lenguaje_escrito),
+
+    FOREIGN KEY (codigo_lenguaje_escrito)
+        REFERENCES Lenguaje_Escrito (codigo_lenguaje)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
 ) ENGINE = InnoDB;
