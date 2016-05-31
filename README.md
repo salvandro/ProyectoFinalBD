@@ -27,7 +27,7 @@
    * <u>codigo</u>
    * nombre
 8. Galaxia<br />
-   * <u>codigo</>
+   * <u>codigo</u>
    * nombre
 9. Sustancia<br />
    * <u>codigo</u>
