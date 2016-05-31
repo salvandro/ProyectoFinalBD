@@ -64,10 +64,16 @@ CREATE TABLE IF NOT EXISTS Area
 # del problema.
 CREATE TABLE IF NOT EXISTS Luna
 (
-    codigo INT         AUTO_INCREMENT, # es el código de la luna.
-    nombre VARCHAR(30) NOT NULL      , # es el nombre de la luna.
+    codigo         INT         AUTO_INCREMENT, # es el código de la luna.
+    codigo_planeta INT         NOT NULL      , # es el código del planeta al que pertenece la luna.
+    nombre         VARCHAR(30) NOT NULL      , # es el nombre de la luna.
 
-    PRIMARY KEY (codigo)
+    PRIMARY KEY (codigo),
+
+    FOREIGN KEY (codigo_planeta)
+        REFERENCES Planeta (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las federaciones
@@ -285,29 +291,6 @@ CREATE TABLE IF NOT EXISTS Planeta_tiene_Area
 
     FOREIGN KEY (codigo_area)
         REFERENCES Area (codigo)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
-) ENGINE = InnoDB;
-
-# Esta tabla representa la relación que hay entre las
-# entidades Planeta y Luna.
-#
-# En esta tabla se insertan los códigos del planeta
-# y las lunas que posee.
-CREATE TABLE IF NOT EXISTS Planeta_tiene_Luna
-(
-    codigo_planeta INT NOT NULL, # es el código del planeta.
-    codigo_luna    INT NOT NULL, # es el código de la luna que tiene el planeta.
-
-    PRIMARY KEY (codigo_planeta, codigo_luna),
-
-    FOREIGN KEY (codigo_planeta)
-        REFERENCES Planeta (codigo)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-
-    FOREIGN KEY (codigo_luna)
-        REFERENCES Luna (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
