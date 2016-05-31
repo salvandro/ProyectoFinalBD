@@ -66,9 +66,12 @@
 
 ## Relaciones
 
-<pre>1. [   Sol    ]0&gt;---------------&lt; es  &gt;---------------|0[Tipo_Sol]
-2. [ Planeta  ]0&gt;---------------&lt;tiene&gt;---------------|0[Sol]
-3. [ Planeta  ]||---------------&lt;tiene&gt;---------------&lt;0[Area]
-4. [ Planeta  ]||---------------&lt;tiene&gt;---------------&lt;0[Luna]
-5. [Federacion]0|---------------&lttiene&gt;---------------&lt;0[Planeta]
-6. [ Galaxia  ]0&gt;---------------&lt;tiene&gt;---------------&lt;0[Planeta]</pre>
+<pre>
+1. [   Galaxia   ]0|---------------&lt;tiene&gt;---------------&lt;0[Sistema_Solar]
+2. [Sistema_solar]0|---------------&lt;tiene&gt;---------------&lt;0[   Planeta   ]
+3. [     Sol     ]0&gt;---------------&lt; es  &gt;---------------|0[  Tipo_Sol   ]
+2. [   Planeta   ]0&gt;---------------&lt;tiene&gt;---------------|0[     Sol     ]
+3. [   Planeta   ]0|---------------&lt;tiene&gt;---------------&lt;0[    Area     ]
+4. [   Planeta   ]0|---------------&lt;tiene&gt;---------------&lt;0[    Luna     ]
+5. [ Federacion  ]0|---------------&lt;tiene&gt;---------------&lt;0[   Planeta   ]
+</pre>
