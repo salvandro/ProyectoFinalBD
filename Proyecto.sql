@@ -59,29 +59,6 @@ CREATE TABLE IF NOT EXISTS Area
     PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
-# Esta tabla representa la relación que hay entre
-# las entidades Planeta y Área.
-#
-# En esta tabla se insertan los códigos del planeta
-# y las áreas que lo conforman.
-CREATE TABLE IF NOT EXISTS Planeta_tiene_Area
-(
-    codigo_planeta INT NOT NULL, # es el código del planeta.
-    codigo_area    INT NOT NULL, # es el código del área que tiene el planeta.
-
-    PRIMARY KEY (codigo_planeta, codigo_area),
-
-    FOREIGN KEY (codigo_planeta)
-        REFERENCES Planeta (codigo)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-
-    FOREIGN KEY (codigo_area)
-        REFERENCES Area (codigo)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
-) ENGINE = InnoDB;
-
 # Esta tabla representa cada una de las lunas
 # que poseen cada uno de los planetas dentro
 # del problema.
@@ -91,29 +68,6 @@ CREATE TABLE IF NOT EXISTS Luna
     nombre VARCHAR(30) NOT NULL      , # es el nombre de la luna.
 
     PRIMARY KEY (codigo)
-) ENGINE = InnoDB;
-
-# Esta tabla representa la relación que hay entre las
-# entidades Planeta y Luna.
-#
-# En esta tabla se insertan los códigos del planeta
-# y las lunas que posee.
-CREATE TABLE IF NOT EXISTS Planeta_tiene_Luna
-(
-    codigo_planeta INT NOT NULL, # es el código del planeta.
-    codigo_luna    INT NOT NULL, # es el código de la luna que tiene el planeta.
-
-    PRIMARY KEY (codigo_planeta, codigo_luna),
-
-    FOREIGN KEY (codigo_planeta)
-        REFERENCES Planeta (codigo)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-
-    FOREIGN KEY (codigo_luna)
-        REFERENCES Luna (codigo)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las federaciones
@@ -127,30 +81,6 @@ CREATE TABLE IF NOT EXISTS Federacion
     PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
-
-# Esta tabla representa la relación que hay entre las entidades
-# Federación y Planeta.
-#
-# En esta tabla se insertan los códigos de la federación y
-# de los planetas que la conforman.
-CREATE TABLE  IF NOT EXISTS Federacion_tiene_Planeta
-(
-    codigo_federacion INT NOT NULL, # es el código de la federación.
-    codigo_planeta    INT NOT NULL, # es el código del planeta que tiene la federación.
-
-    PRIMARY KEY (codigo_federacion, codigo_planeta),
-
-    FOREIGN KEY (codigo_federacion)
-        REFERENCES Federacion (codigo)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-
-    FOREIGN KEY (codigo_planeta)
-        REFERENCES Planeta (codigo)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
-) ENGINE = InnoDB;
-
 # Esta tabla representa cada uno de los sistemas
 # solares dentro del problema, los cuales se encuentran
 # formados por planetas, lunas y soles.
@@ -162,29 +92,6 @@ CREATE TABLE IF NOT EXISTS Sistema_Solar
     PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
-# Esta tabla representa la relación que hay entre las entidades
-# Sistema_Solar y Planeta.
-#
-# En esta tabla se insertan loc códigos del sistema solar
-# y los planetas que lo conforman.
-CREATE TABLE IF NOT EXISTS Sistema_Solar_tiene_Planeta
-(
-    codigo_sistema_solar INT NOT NULL, # es el código del sistema solar.
-    codigo_planeta       INT NOT NULL, # es el código del planeta que tiene el sistema solar.
-
-    PRIMARY KEY (codigo_sistema_solar, codigo_planeta),
-
-    FOREIGN KEY (codigo_sistema_solar)
-        REFERENCES Sistema_solar (codigo)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-
-    FOREIGN KEY (codigo_planeta)
-        REFERENCES Planeta (codigo)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
-) ENGINE = InnoDB;
-
 # Esta tabla representa cada una de las galaxias dentro
 # del problema, las cuales se encuentran formadas por
 # sistemas solares.
@@ -194,29 +101,6 @@ CREATE TABLE IF NOT EXISTS Galaxia
     nombre VARCHAR(30) NOT NULL      , # es el nombre de la galaxia.
 
     PRIMARY KEY (codigo)
-) ENGINE = InnoDB;
-
-# Esta tabla representa la relación que hay entre las entidades
-# Galaxi y Sistema_Solar.
-#
-# En esta tabla se insertan los códigos de la galaxia y los
-# sistemas solares que la conforman.
-CREATE TABLE IF NOT EXISTS Galaxia_tiene_Sistema_Solar
-(
-    codigo_galaxia       INT NOT NULL, # es el código de la galaxia.
-    codigo_sistema_solar INT NOT NULL, # es el codigo del sistema solar que tiene la galaxia.
-
-    PRIMARY KEY (codigo_galaxia, codigo_sistema_solar),
-
-    FOREIGN KEY (codigo_galaxia)
-        REFERENCES Galaxia (codigo)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-
-    FOREIGN KEY (codigo_sistema_solar)
-        REFERENCES Sistema_Solar (codigo)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
 # Esta tabla representa cada una de las sustancias de las
@@ -378,6 +262,121 @@ CREATE TABLE IF NOT EXISTS Lenguaje_Escrito_Pictografico
 
     FOREIGN KEY (codigo_lenguaje_escrito)
         REFERENCES Lenguaje_Escrito (codigo_lenguaje)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+# Esta tabla representa la relación que hay entre
+# las entidades Planeta y Área.
+#
+# En esta tabla se insertan los códigos del planeta
+# y las áreas que lo conforman.
+CREATE TABLE IF NOT EXISTS Planeta_tiene_Area
+(
+    codigo_planeta INT NOT NULL, # es el código del planeta.
+    codigo_area    INT NOT NULL, # es el código del área que tiene el planeta.
+
+    PRIMARY KEY (codigo_planeta, codigo_area),
+
+    FOREIGN KEY (codigo_planeta)
+        REFERENCES Planeta (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_area)
+        REFERENCES Area (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+# Esta tabla representa la relación que hay entre las
+# entidades Planeta y Luna.
+#
+# En esta tabla se insertan los códigos del planeta
+# y las lunas que posee.
+CREATE TABLE IF NOT EXISTS Planeta_tiene_Luna
+(
+    codigo_planeta INT NOT NULL, # es el código del planeta.
+    codigo_luna    INT NOT NULL, # es el código de la luna que tiene el planeta.
+
+    PRIMARY KEY (codigo_planeta, codigo_luna),
+
+    FOREIGN KEY (codigo_planeta)
+        REFERENCES Planeta (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_luna)
+        REFERENCES Luna (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+# Esta tabla representa la relación que hay entre las entidades
+# Federación y Planeta.
+#
+# En esta tabla se insertan los códigos de la federación y
+# de los planetas que la conforman.
+CREATE TABLE  IF NOT EXISTS Federacion_tiene_Planeta
+(
+    codigo_federacion INT NOT NULL, # es el código de la federación.
+    codigo_planeta    INT NOT NULL, # es el código del planeta que tiene la federación.
+
+    PRIMARY KEY (codigo_federacion, codigo_planeta),
+
+    FOREIGN KEY (codigo_federacion)
+        REFERENCES Federacion (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_planeta)
+        REFERENCES Planeta (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+# Esta tabla representa la relación que hay entre las entidades
+# Sistema_Solar y Planeta.
+#
+# En esta tabla se insertan loc códigos del sistema solar
+# y los planetas que lo conforman.
+CREATE TABLE IF NOT EXISTS Sistema_Solar_tiene_Planeta
+(
+    codigo_sistema_solar INT NOT NULL, # es el código del sistema solar.
+    codigo_planeta       INT NOT NULL, # es el código del planeta que tiene el sistema solar.
+
+    PRIMARY KEY (codigo_sistema_solar, codigo_planeta),
+
+    FOREIGN KEY (codigo_sistema_solar)
+        REFERENCES Sistema_solar (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_planeta)
+        REFERENCES Planeta (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+# Esta tabla representa la relación que hay entre las entidades
+# Galaxi y Sistema_Solar.
+#
+# En esta tabla se insertan los códigos de la galaxia y los
+# sistemas solares que la conforman.
+CREATE TABLE IF NOT EXISTS Galaxia_tiene_Sistema_Solar
+(
+    codigo_galaxia       INT NOT NULL, # es el código de la galaxia.
+    codigo_sistema_solar INT NOT NULL, # es el codigo del sistema solar que tiene la galaxia.
+
+    PRIMARY KEY (codigo_galaxia, codigo_sistema_solar),
+
+    FOREIGN KEY (codigo_galaxia)
+        REFERENCES Galaxia (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_sistema_solar)
+        REFERENCES Sistema_Solar (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
