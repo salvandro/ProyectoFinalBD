@@ -16,3 +16,15 @@
 14. Lenguaje
 15. Lenguaje_Gestos
 16. Lenguaje_Sonidos
+17. Lenguaje_Escrito
+18. Lenguaje_Escrito_Fonetico
+19. Lenguaje_Escrito_Pictografico
+20. Persona
+21. Persona_Investigador
+22. Persona_Investigador_Zoologo
+23. Persona_Investigador_Botanico
+24. Persona_Investigador_Geologo
+25. Persona_Mantenimiento
+26. Persona_Militar
+27. Proyecto
+28. Tipo_Proyecto
