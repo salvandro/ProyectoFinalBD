@@ -275,7 +275,7 @@ CREATE TABLE IF NOT EXISTS Planta
 # un listado de todas esas especies animales.
 CREATE TABLE IF NOT EXISTS Especie_Animal
 (
-    codigo              INT                  AUTO_INCREMENT, # es el código de la especia animal.
+    codigo              INT                  AUTO_INCREMENT, # es el código de la especie animal.
     nombre_cientifico   VARCHAR(30)          NOT NULL      , # es el nombre científico de la especie animal.
     numero_extremidades INT         UNSIGNED               , # es el número de extremidades que posee la especie animal.
     numero_ojos         INT         UNSIGNED               , # es el número de ojos que posee la especie animal.
