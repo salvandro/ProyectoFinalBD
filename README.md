@@ -1,15 +1,19 @@
 # Entidades
 
-1. Tipo_Sol<span class="octicon octicon-check"></span><br />
-   * codigo<span class="octicon octicon-check"></span>
-   * nombre<span class="octicon octicon-check"></span>
-2. Sol<span class="octicon octicon-check"></span><br />
-   * codigo<span class="octicon octicon-check"></span>
-   * nombre<span class="octicon octicon-check"></span>
-   * tiempo_vida<span class="octicon octicon-check"></span>
-   * tiempo_vida_restante<span class="octicon octicon-check"></span>
-   * codigo_tipo_sol<span class="octicon octicon-check"></span>
-3. Planeta
+1. Tipo_Sol ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)<br />
+   * codigo ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
+   * nombre ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
+2. Sol ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)<br />
+   * codigo ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
+   * nombre ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
+   * tiempo_vida ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
+   * tiempo_vida_restante ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
+   * codigo_tipo_sol ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
+3. Planeta ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)<br />
+   * codigo ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
+   * nombre ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
+   * distancia_sol ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
+   * codigo_sol ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
 4. Area
 5. Luna
 6. Federacion
