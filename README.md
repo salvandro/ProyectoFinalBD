@@ -28,3 +28,9 @@
 26. Persona_Militar
 27. Proyecto
 28. Tipo_Proyecto
+
+# Relaciones
+<pre>1. [  Sol  ]0&gt;---------------&lt; es  &gt;---------------|0[Tipo_Sol]
+2. [Planeta]0&gt;---------------&lt;tiene&gt;---------------|0[Sol]
+3. [Planeta]||---------------&lt;tiene&gt;---------------&lt;0[Area]
+4. [Planeta]||---------------&lt;tiene&gt;---------------&lt;0[Luna]</pre>
