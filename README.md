@@ -1,30 +1,54 @@
-# Entidades
+# Diagrama Entidad-Relacion
 
-1. Tipo_Sol ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)<br />
-   * codigo ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
-   * nombre ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
-2. Sol ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)<br />
-   * codigo ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
-   * nombre ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
-   * tiempo_vida ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
-   * tiempo_vida_restante ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
-   * codigo_tipo_sol ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
-3. Planeta ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)<br />
-   * codigo ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
-   * nombre ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
-   * distancia_sol ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
-   * codigo_sol ![check icon](http://files.softicons.com/download/internet-icons/checkout-process-icons-by-jakub-stacho/png/16/tick.png)
-4. Area
-5. Luna
-6. Federacion
-7. Sistema_Solar
-8. Galaxia
-9. Sustancia
-10. Estado_Sustancia
-11. Planta
-12. Especie_Animal
-13. Parte_Cuerpo
-14. Lenguaje
+## Entidades
+
+1. Tipo_Sol<br />
+   * <u>codigo</u>
+   * nombre
+2. Sol<br />
+   * <u>codigo</u>
+   * nombre
+   * tiempo_vida
+   * tiempo_vida_restante
+3. Planeta<br />
+   * <u>codigo</u>
+   * nombre
+   * distancia_sol
+4. Area<br />
+   * <u>codigo</u>
+   * nombre
+5. Luna<br />
+   * <u>codigo</u>
+   * nombre
+6. Federacion<br />
+   * <u>codigo</u>
+   * nombre
+7. Sistema_Solar<br />
+   * <u>codigo</u>
+   * nombre
+8. Galaxia<br />
+   * <u>codigo</>
+   * nombre
+9. Sustancia<br />
+   * <u>codigo</u>
+   * nombre_cientifico
+10. Estado_Sustancia<br />
+   * <u>codigo</u>
+   * nombre
+11. Planta<br />
+   * <u>codigo</u>
+   * nombre_cientifico
+12. Especie_Animal<br />
+   * <u>codigo</u>
+   * nombre_cientifico
+   * numero_extremidades
+   * numero_ojos
+13. Parte_Cuerpo<br />
+   * <u>codigo</u>
+   * nombre
+14. Lenguaje<br />
+   * <u>codigo</u>
+   * nombre
 15. Lenguaje_Gestos
 16. Lenguaje_Sonidos
 17. Lenguaje_Escrito
@@ -40,7 +64,7 @@
 27. Proyecto
 28. Tipo_Proyecto
 
-# Relaciones
+## Relaciones
 
 <pre>1. [   Sol    ]0&gt;---------------&lt; es  &gt;---------------|0[Tipo_Sol]
 2. [ Planeta  ]0&gt;---------------&lt;tiene&gt;---------------|0[Sol]
