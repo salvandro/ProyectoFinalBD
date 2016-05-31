@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS Sol
 CREATE TABLE IF NOT EXISTS Planeta
 (
     codigo        INT         AUTO_INCREMENT, # es el código del planeta.
-    codigo_sol    INT         NOT NULL      , # es el código del sol que posee el planeta.
+    codigo_sol    INT         NOT NULL      , # es el código del sol que tiene el planeta.
     nombre        VARCHAR(30) NOT NULL      , # es el nombre del planeta.
     distancia_sol FLOAT       NULL          , # es la distancia entre el planeta y su sol.
 
@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS Planeta
 # los planetas, lunas y soles dentro del problema.
 CREATE TABLE IF NOT EXISTS Area
 (
-    codigo INT         AUTO_INCREMENT, # es el código del área que posee un planeta.
-    nombre VARCHAR(30) NOT NULL      , # es el nombre del área que posee un planeta.
+    codigo INT         AUTO_INCREMENT, # es el código del área que tiene un planeta.
+    nombre VARCHAR(30) NOT NULL      , # es el nombre del área que tiene un planeta.
 
     PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS Area
 CREATE TABLE IF NOT EXISTS Planeta_tiene_Area
 (
     codigo_planeta INT NOT NULL, # es el código del planeta.
-    codigo_area    INT NOT NULL, # es el códigos de las áreas que conforman el planeta.
+    codigo_area    INT NOT NULL, # es el código del área que tiene el planeta.
 
     PRIMARY KEY (codigo_planeta, codigo_area),
 
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS Luna
 CREATE TABLE IF NOT EXISTS Planeta_tiene_Luna
 (
     codigo_planeta INT NOT NULL, # es el código del planeta.
-    codigo_luna    INT NOT NULL, # es el código de la luna que posee el planeta.
+    codigo_luna    INT NOT NULL, # es el código de la luna que tiene el planeta.
 
     PRIMARY KEY (codigo_planeta, codigo_luna),
 
@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS Federacion
 CREATE TABLE  IF NOT EXISTS Federacion_tiene_Planeta
 (
     codigo_federacion INT NOT NULL, # es el código de la federación.
-    codigo_planeta    INT NOT NULL, # es el código de los planetas que conforman la federación.
+    codigo_planeta    INT NOT NULL, # es el código del planeta que tiene la federación.
 
     PRIMARY KEY (codigo_federacion, codigo_planeta),
 
@@ -170,7 +170,7 @@ CREATE TABLE IF NOT EXISTS Sistema_Solar
 CREATE TABLE IF NOT EXISTS Sistema_Solar_tiene_Planeta
 (
     codigo_sistema_solar INT NOT NULL, # es el código del sistema solar.
-    codigo_planeta       INT NOT NULL, # es el código del planeta que pertenece al sistema solar.
+    codigo_planeta       INT NOT NULL, # es el código del planeta que tiene el sistema solar.
 
     PRIMARY KEY (codigo_sistema_solar, codigo_planeta),
 
@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS Galaxia
 CREATE TABLE IF NOT EXISTS Galaxia_tiene_Sistema_Solar
 (
     codigo_galaxia       INT NOT NULL, # es el código de la galaxia.
-    codigo_sistema_solar INT NOT NULL, # es el codigo de los sistemas solares que conforman la galaxia.
+    codigo_sistema_solar INT NOT NULL, # es el codigo del sistema solar que tiene la galaxia.
 
     PRIMARY KEY (codigo_galaxia, codigo_sistema_solar),
 
@@ -260,7 +260,7 @@ CREATE TABLE IF NOT EXISTS Estado_Sustancia
 # de todas esas plantas.
 CREATE TABLE IF NOT EXISTS Planta
 (
-    codigo            INT         AUTO_INCREMENT, # es el código de una planta.
+    codigo            INT         AUTO_INCREMENT, # es el código de la planta.
     nombre_cientifico VARCHAR(30) NOT NULL      , # es el nombre científico de la planta.
 
     PRIMARY KEY (codigo)
@@ -275,7 +275,7 @@ CREATE TABLE IF NOT EXISTS Planta
 # un listado de todas esas especies animales.
 CREATE TABLE IF NOT EXISTS Especie_Animal
 (
-    codigo              INT                  AUTO_INCREMENT, # es el código de una especia animal.
+    codigo              INT                  AUTO_INCREMENT, # es el código de la especia animal.
     nombre_cientifico   VARCHAR(30)          NOT NULL      , # es el nombre científico de la especie animal.
     numero_extremidades INT         UNSIGNED               , # es el número de extremidades que posee la especie animal.
     numero_ojos         INT         UNSIGNED               , # es el número de ojos que posee la especie animal.
@@ -293,7 +293,7 @@ CREATE TABLE IF NOT EXISTS Especie_Animal
 # lenguajes.
 CREATE TABLE IF NOT EXISTS Lenguaje
 (
-    codigo INT        , # es el código de un lenguaje.
+    codigo INT        , # es el código del lenguaje.
     nombre VARCHAR(30), # es el nombre del lenguaje.
     tipo   VARCHAR(30)  # es el tipo de lenguaje.
 ) ENGINE = InnoDB;
