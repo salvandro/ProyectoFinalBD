@@ -67,7 +67,14 @@
 25. Persona_Mantenimiento
 26. Persona_Militar
 27. Proyecto
+   * codigo
+   * nombre
+   * proposito
+   * fecha_inicio
+   * fecha_final
 28. Tipo_Proyecto
+   * codigo
+   * nombre
 
 ## Relaciones
 
