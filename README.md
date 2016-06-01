@@ -55,17 +55,17 @@
 17. Lenguaje_Escrito
 18. Lenguaje_Escrito_Fonetico
 19. Lenguaje_Escrito_Pictografico
-20. Persona<br />
+20. Personal<br />
    * codigo
    * nombre
    * apellido_paterno
    * apellido_materno
-21. Persona_Investigador
-22. Persona_Investigador_Zoologo
-23. Persona_Investigador_Botanico
-24. Persona_Investigador_Geologo
-25. Persona_Mantenimiento
-26. Persona_Militar
+21. Personal_Investigador
+22. Personal_Investigador_Zoologo
+23. Personal_Investigador_Botanico
+24. Personal_Investigador_Geologo
+25. Personal_Mantenimiento
+26. Personal_Militar
 27. Proyecto
    * codigo
    * nombre
@@ -86,6 +86,7 @@
 3. [   Planeta   ]0|---------------&lt;      tiene      &gt;---------------&lt;0[    Area     ]
 4. [   Planeta   ]0|---------------&lt;      tiene      &gt;---------------&lt;0[    Luna     ]
 5. [ Federacion  ]0|---------------&lt;      tiene      &gt;---------------&lt;0[   Planeta   ]
-6. [  Lenguaje   ]0>---------------&lt;   es variante   &gt;---------------|0[  Lenguaje   ]
+6. [  Lenguaje   ]0&gt;---------------&lt;   es variante   &gt;---------------|0[  Lenguaje   ]
 7. [  Lenguaje   ]0|---------------&lt;es especificacion&gt;---------------&lt;0[  Lenguaje   ]
+8. [  Proyecto   ]0&gt;---------------&lt; es subproyecto  &gt;---------------0|[  Proyecto   ]
 </pre>
