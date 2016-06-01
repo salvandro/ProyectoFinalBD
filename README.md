@@ -5,6 +5,7 @@
 1. Federacion<br />
    * codigo
    * nombre
+   * lider
 2. Galaxia<br />
    * codigo
    * nombre
@@ -54,7 +55,11 @@
 17. Lenguaje_Escrito
 18. Lenguaje_Escrito_Fonetico
 19. Lenguaje_Escrito_Pictografico
-20. Persona
+20. Persona<br />
+   * codigo
+   * nombre
+   * apellido_paterno
+   * apellido_materno
 21. Persona_Investigador
 22. Persona_Investigador_Zoologo
 23. Persona_Investigador_Botanico
@@ -67,11 +72,13 @@
 ## Relaciones
 
 <pre>
-1. [   Galaxia   ]0|---------------&lt;tiene&gt;---------------&lt;0[Sistema_Solar]
-2. [Sistema_solar]0|---------------&lt;tiene&gt;---------------&lt;0[   Planeta   ]
-3. [     Sol     ]0&gt;---------------&lt; es  &gt;---------------|0[  Tipo_Sol   ]
-2. [   Planeta   ]0&gt;---------------&lt;tiene&gt;---------------|0[     Sol     ]
-3. [   Planeta   ]0|---------------&lt;tiene&gt;---------------&lt;0[    Area     ]
-4. [   Planeta   ]0|---------------&lt;tiene&gt;---------------&lt;0[    Luna     ]
-5. [ Federacion  ]0|---------------&lt;tiene&gt;---------------&lt;0[   Planeta   ]
+1. [   Galaxia   ]0|---------------&lt;      tiene      &gt;---------------&lt;0[Sistema_Solar]
+2. [Sistema_solar]0|---------------&lt;      tiene      &gt;---------------&lt;0[   Planeta   ]
+3. [     Sol     ]0&gt;---------------&lt;       es        &gt;---------------|0[  Tipo_Sol   ]
+2. [   Planeta   ]0&gt;---------------&lt;      tiene      &gt;---------------|0[     Sol     ]
+3. [   Planeta   ]0|---------------&lt;      tiene      &gt;---------------&lt;0[    Area     ]
+4. [   Planeta   ]0|---------------&lt;      tiene      &gt;---------------&lt;0[    Luna     ]
+5. [ Federacion  ]0|---------------&lt;      tiene      &gt;---------------&lt;0[   Planeta   ]
+6. [  Lenguaje   ]0>---------------&lt;   es variante   &gt;---------------|0[  Lenguaje   ]
+7. [  Lenguaje   ]0|---------------&lt;es especificacion&gt;---------------&lt;0[  Lenguaje   ]
 </pre>
