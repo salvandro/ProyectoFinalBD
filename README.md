@@ -2,52 +2,52 @@
 
 ## Entidades
 
-1. Federacion<br />
+1. Federacion
    * codigo
    * nombre
    * lider
-2. Galaxia<br />
+2. Galaxia
    * codigo
    * nombre
-3. Sistema_Solar<br />
+3. Sistema_Solar
    * codigo
    * nombre
-4. Tipo_Sol<br />
+4. Tipo_Sol
    * codigo
    * nombre
-5. Sol<br />
+5. Sol
    * codigo
    * nombre
    * tiempo_vida
    * tiempo_vida_restante
-6. Planeta<br />
+6. Planeta
    * codigo
    * nombre
    * distancia_sol
-7. Area<br />
+7. Area
    * codigo
    * nombre
-8. Luna<br />
+8. Luna
    * codigo
    * nombre
-9. Sustancia<br />
+9. Sustancia
    * codigo
    * nombre_cientifico
-10. Estado_Sustancia<br />
+10. Estado_Sustancia
    * codigo
    * nombre
-11. Planta<br />
+11. Planta
    * codigo
    * nombre_cientifico
-12. Especie_Animal<br />
+12. Especie_Animal
    * codigo
    * nombre_cientifico
    * numero_extremidades
    * numero_ojos
-13. Parte_Cuerpo<br />
+13. Parte_Cuerpo
    * codigo
    * nombre
-14. Lenguaje<br />
+14. Lenguaje
    * codigo
    * nombre
 15. Lenguaje_Gestos
@@ -55,7 +55,7 @@
 17. Lenguaje_Escrito
 18. Lenguaje_Escrito_Fonetico
 19. Lenguaje_Escrito_Pictografico
-20. Personal<br />
+20. Personal
    * codigo
    * nombre
    * apellido_paterno
