@@ -76,6 +76,18 @@
    * codigo
    * nombre
 
+## Entidades Asociativas
+
+1. Planeta_Estudiado
+2. Luna_Estudiada
+3. Area_Estudiada
+4. Especie_Animal_en_Area
+   * nombre_local
+5. Planta_Estudiada
+   * nombre_local
+6. Sustancia_en_Area
+   * explotable
+
 ## Relaciones
 
 <pre>
