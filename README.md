@@ -1,2 +1,2 @@
 # Diagrama Entidad-Relación
-![Image](./ERDiagram.svg)
+![Image](ERDiagram.svg)
