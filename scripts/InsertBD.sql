@@ -1,0 +1,1204 @@
+INSERT INTO Federacion
+(
+   nombre,
+   lider
+)
+values
+(
+   'Federacion de Comercio',
+   'Cenador Organa'
+),
+(
+   'Federacion de Galaxias Libres',
+   'Princess Amidala'
+),
+(
+   'Federacion Independiente',
+   'Anakin Skywalker'
+),
+(
+   'Federacion Droide',
+   'Lord Palpatin'
+),
+(
+   'Federacion Republicana',
+   'Lord Cantoyan'
+);
+
+INSERT INTO Galaxia
+(
+   nombre
+)
+values
+(
+   'Via Lactea'
+),
+(
+   'Andromeda'
+),
+(
+   'Sentauri'
+),
+(
+   'Tunsken'
+),
+(
+   'Dontorplas'
+);
+
+INSERT INTO Sistema_Solar
+(
+   nombre,
+   codigo_galaxia
+)
+values
+(
+   'Dorante',
+   2
+),
+(
+   'Swatch',
+   5
+),
+(
+   'Casio',
+   1
+),
+(
+   'Contotor',
+   2
+),
+(
+   'Trinquest',
+   3
+),
+(
+   'Huann',
+   5
+),
+(
+   'Lenvv',
+   4
+),
+(
+   'Turky',
+   1
+),
+(
+   'Sants',
+   5
+),
+(
+   'Pyre',
+   3
+);
+
+INSERT INTO Tipo_Sol
+(
+   nombre
+)
+values
+(
+   'Noba'
+),
+(
+   'SuperNoba'
+),
+(
+   'MagmaNoba'
+),
+(
+   'PseudoNoba'
+),
+(
+   'LessSun'
+),
+(
+   'NonGas'
+),
+(
+   'Darkhole'
+);
+
+INSERT INTO Sol
+(
+   nombre,
+   tiempo_vida,
+   tempo_restante_vida,
+   codigo_tipo_sol,
+   codigo_sistema_solar
+)
+values
+(
+   'Alfa',
+   '0000/01/01',
+   '8000/12/31',
+   7,
+   10
+),
+(
+   'Beta',
+   '0000/01/01',
+   '9000/04/12',
+   3,
+   2
+),
+(
+   'Gama',
+   '0000/01/01',
+   '3500/03/20',
+   4,
+   1
+),
+(
+   'Epsilon',
+   '0000/01/01',
+   '9900/01/05',
+   6,
+   6
+),
+(
+   'Sigma',
+   '0000/01/01',
+   '3400/07/10',
+   2,
+   8
+),
+(
+   'Roo',
+   '0000/01/01',
+   '7580/09/04',
+   3,
+   5
+),
+(
+   'Delta',
+   '0000/01/01',
+   '7493/11/30',
+   2,
+   9
+),
+(
+   'Yota',
+   '0000/01/01',
+   '4355/12/05',
+   5,
+   8
+),
+(
+   'Pico',
+   '0000/01/01',
+   '9485/06/13',
+   7,
+   3
+);
+
+INSERT INTO Planeta
+(
+   nombre,
+   distancia_sol,
+   codigo_sol,
+   codigo_federacion
+)
+values
+(
+   'Tierra',
+   1235000.232,
+   9,
+   5
+),
+(
+   'Marte',
+   9477384.2344,
+   2,
+   2
+),
+(
+   'Jupiter',
+   1002983866.190002,
+   6,
+   1
+),
+(
+   'Aargonar',
+   1027738479885.32224,
+   7,
+   3
+),
+(
+   'Axion',
+   133398274.0008374,
+   5,
+   4
+),
+(
+   'Cadinth',
+   29937654.00276,
+   8,
+   4
+),
+(
+   'Bespin',
+   299387.00498,
+   9,
+   2
+),
+(
+   'Enarc',
+   29937400.08364,
+   4,
+   4
+),
+(
+   'Felucia',
+   388476201.00384,
+   5,
+   1
+),
+(
+   'Muunilinst',
+   399276544.0044938,
+   7,
+   4
+);
+
+INSERT INTO Area
+(
+   nombre,
+   codigo_planeta
+)
+value
+(
+   'Tundra',
+   10
+),
+(
+   'Sabana',
+   4
+),
+(
+   'Magmatico',
+   5
+),
+(
+   'Subacuatico',
+   7
+),
+(
+   'Desertico',
+   1
+),
+(
+   'Arido',
+   9
+),
+(
+   'Rocoso',
+   8
+),
+(
+   'Pantanoso',
+   3
+),
+(
+   'Arenoso',
+   5
+),
+(
+   'Toxico',
+   6
+),
+(
+   'Radiactivo',
+   1
+),
+(
+   'Boscoso',
+   3
+),
+(
+   'Urbanizado',
+   4
+),
+(
+   'Rural',
+   9
+),
+(
+   'Liliputense',
+   10
+),
+(
+   'Megavivos',
+   2
+);
+
+INSERT INTO Luna
+(
+   nombre,
+   codigo_planeta
+)
+values
+(
+   'Zaadja',
+   10
+),
+(
+   'Virujansi',
+   3
+),
+(
+   'Troxar',
+   5
+),
+(
+   'Raxus Prime',
+   9
+),
+(
+   'Tarhassan',
+   3
+),
+(
+   'Nivek',
+   6
+),
+(
+   'Lethe',
+   2
+),
+(
+   'Pammant',
+   10
+),
+(
+   'Hypori',
+   1
+);
+
+INSERT INTO Sustancia
+(
+   nombre_cientifico
+)
+values
+(
+   'Acetona'
+),
+(
+   'Acido Acetico'
+),
+(
+   'Acido Acetilsalcilico'
+),
+(
+   'Acido Sulfurico'
+),
+(
+   'Cloruro de Sodio'
+),
+(
+   'Sacarosa'
+),
+(
+   'Octano'
+),
+(
+   'Etanol'
+),
+(
+   'Ahnidrido Silicico'
+),
+(
+   'Acido Nitrico'
+),
+(
+   'Oxido Nitroso'
+);
+
+INSERT INTO Estado_Sustancia
+(
+   nombre
+)
+values
+(
+   'Solido'
+),
+(
+   'Liquido'
+),
+(
+   'Gaseoso'
+),
+(
+   'Plasma'
+),
+(
+   'Bose-Einstein'
+);
+
+INSERT INTO Planta
+(
+   nombre
+)
+values
+(
+   'Orquidea'
+),
+(
+   'Margarita'
+),
+(
+   'Groot'
+),
+(
+   'Violeta'
+),
+(
+   'Arbusto'
+),
+(
+   'Rosa'
+),
+(
+   'Limon'
+),
+(
+   'Campana'
+),
+(
+   'Flor Carnivora'
+),
+(
+   'Abies alba Mill'
+),
+(
+   'Acanthus spp'
+),
+(
+   'Acer palmatum'
+),
+(
+   'Agave Americana'
+),
+(
+   'Allium Cepa'
+),
+(
+   'Aloe saponaria'
+),
+(
+   'Arcotis x hybrida'
+),
+(
+   'Bellis perennis'
+),
+(
+   'Calathea spp'
+),
+(
+   'Canna indica'
+),
+(
+   'Cyclamen persicum'
+),
+(
+   'Cydonia oblonga'
+);
+
+INSERT INTO Especie_Animal
+(
+   nombre_cientifico,
+   numero_extremidades,
+   numero_ojos
+)
+values
+(
+   'Canis',
+   4,
+   2
+),
+(
+   'Felis'
+   4,
+   2
+),
+(
+   'Oryctolagus'
+   8,
+   3
+),
+(
+   'Cricetus'
+   6,
+   1
+),
+(
+   'Iguana'
+   4,
+   4
+),
+(
+   'Bostaurus'
+   8,
+   1
+),
+(
+   'Equusferus'
+   10,
+   6
+),
+(
+   'Susscrofa'
+   6,
+   4
+),
+(
+   'Ovisorientalis'
+   8,
+   4
+),
+(
+   'Capraaegagrus'
+   2,
+   3
+),
+(
+   'Panthera'
+   4,
+   2
+),
+(
+   'Loxodonta',
+   6,
+   1
+);
+
+INSERT INTO Parte_Cuerpo
+(
+   nombre
+)
+values
+(
+   'Mano'
+),
+(
+   'Pierna'
+),
+(
+   'Tentaculo'
+),
+(
+   'Trompa'
+),
+(
+   'Pata'
+),
+(
+   'Colmillo'
+),
+(
+   'Cola'
+),
+(
+   'Dedo'
+),
+(
+   'Cuello'
+);
+
+INSERT INTO Lenguaje
+(
+   nombre
+)
+values
+(
+   'Cocotal'
+),
+(
+   'Tranquesso'
+),
+(
+   'Dondolar'
+),
+(
+   'Doshten'
+),
+(
+   'Lotilpulos'
+),
+(
+   'Rontesst'
+),
+(
+   'Xoloentar'
+),
+(
+   'Tonterin'
+),
+(
+   'Zeltixar'
+),
+(
+   'Juncots'
+);
+
+INSERT INTO Lenguaje_Gestos
+(
+   codigo_lenguaje
+)
+values
+(
+   10
+),
+(
+   4
+),
+(
+   3
+),
+(
+   2
+),
+(
+   6
+);
+
+INSERT INTO Lenguaje_Sonidos
+(
+   codigo_lenguaje
+)
+values
+(
+   1
+),
+(
+   8
+),
+(
+   3
+),
+(
+   5
+),
+(
+   7
+);
+
+INSERT INTO Lenguaje_Escrito
+(
+   codigo_lenguaje
+)
+values
+(
+   3
+),
+(
+   5
+),
+(
+   8
+),
+(
+   10
+);
+
+INSERT INTO Lenguaje_Escrito_Pictografico
+(
+   codigo_lenguaje_escrito
+)
+values
+(
+   5
+),
+(
+   10
+);
+
+INSERT INTO Simbolo
+(
+   significado,
+   figura
+)
+values
+(
+   'Peligro',
+   NULL
+),
+(
+   'Ayuda',
+   NULL
+),
+(
+   'Comida',
+   NULL
+),
+(
+   'Agua',
+   NULL
+),
+(
+   'Comunicacion Remota',
+   NULL
+),
+(
+   'Toxico',
+   NULL
+),
+(
+   'Caceria',
+   NULL
+);
+
+INSERT INTO Personal
+(
+   nombre,
+   apellido_paterno,
+   apellido_materno
+)
+values
+(
+   'Carlos',
+   'Contreras',
+   'Torres'
+),
+(
+   'Oscar',
+   'Tostado',
+   'de la Torre'
+),
+(
+   'Maribel',
+   'Martinez',
+   'Correa'
+),
+(
+   'Andrea',
+   'Esquivel',
+   'Nunez'
+),
+(
+   'Andrea',
+   'Gonzales',
+   'Briseno'
+),
+(
+   'Eduardo',
+   'Moreno',
+   'Garcia'
+),
+(
+   'Sebastian',
+   'Ocana',
+   'Mondragon'
+),
+(
+   'Miguel',
+   'Maldonado',
+   'Duarte'
+),
+(
+   'Pedro',
+   'Perez',
+   'Talabera'
+),
+(
+   'Salvador',
+   'Perez Castro',
+   'Guillen'
+);
+
+INSERT INTO Personal_Investigador
+(
+   codigo_personal
+)
+values
+(
+   10
+),
+(
+   3
+),
+(
+   8
+),
+(
+   7
+),
+(
+   9
+),
+(
+   1
+);
+
+INSERT INTO Personal_Investigador_Zoologo
+(
+   codigo_personal_investigador
+)
+values
+(
+   8
+),
+(
+   9
+),
+
+INSERT INTO Botanico
+(
+   codigo_personal_investigador
+)
+values
+(
+   10
+),
+(
+   1
+);
+
+INSERT INTO Geologo
+(
+   codigo_personal_investigador
+)
+values
+(
+   3
+),
+(
+   7
+);
+
+INSERT INTO Militar
+(
+   codigo_personal
+)
+values
+(
+   2
+),
+(
+   4
+),
+(
+   5
+),
+(
+   6
+);
+
+INSERT INTO Proyecto
+(
+   nombre,
+   proposito,
+   fecha_inicio,
+   fecha_fin
+)
+values
+(
+   'Recoleccion Tierra',
+   'Recolectar Gasolina',
+   '2016/03/15',
+   '2016/05/20'
+),
+(
+   'Investigar Criatura',
+   'Criatura Mitica Encontrada',
+   '2020/01/01',
+   '2020/10/30'
+),
+(
+   'Residuos Planta',
+   'Planta Toxica Cuidado',
+   '2016/04/10',
+   '2016/04/30'
+),
+(
+   'Investigar Planta',
+   'Planta Parlante Agrsiva',
+   '2016/05/30',
+   '2016/06/8'
+);
+
+INSERT INTO Tipo_Ptoyecto
+(
+   nobre
+)
+value
+(
+   'Investigacion'
+),
+(
+   'Captura'
+),
+(
+   'Recoleccion'
+),
+(
+   'Limpieza'
+),
+(
+   'Eliminacion'
+);
+
+INSERT INTO Sustancia_en_Sol
+(
+   explotable,
+   cantidad,
+   nombre_local,
+   es_principal,
+   codigo_sol,
+   codigo_sutancia
+)
+values
+(
+   true,
+   250000,
+   'Oxido Deportivo',
+   false,
+   9,
+   11
+),
+(
+   true,
+   300534.231,
+   'Gasolina',
+   true,
+   4,
+   7
+),
+(
+   false,
+   300000.123,
+   'Aspirina',
+   false,
+   2,
+   3
+);
+
+INSERT INTO Sustancia_en_Sol_se_encuentra_Estado_Sustancia
+(
+   codigo_sustancia_en_sol,
+   codigo_estado_sustancia
+)
+values
+(
+   2,
+   3
+),
+(
+   3,
+   3
+),
+(
+   1,
+   3
+);
+
+INSERT INTO Sustancia_en_Area
+(
+   explotable,
+   cantidad,
+   nombre_local,
+   es_principal,
+   codigo_area,
+   codigo_sustancia
+)
+values
+(
+   true,
+   200000000000.321,
+   'Pomo',
+   true,
+   16,
+   8
+),
+(
+   true,
+   1000000.456,
+   'Aspirina',
+   5,
+   3
+),
+(
+   false,
+   30000,
+   'Sacarosa',
+   3,
+   6
+);
+
+INSERT INTO Sustancia_en_Area_se_encuentra_Estado_sustancia
+(
+   codigo_sustancia_en_area,
+   codigo_estado_suatncia
+)
+values
+(
+   2,
+   1
+),
+(
+   1,
+   2
+),
+(
+   3,
+   5
+);
+
+INSERT INTO Sustancia_en_Luna
+(
+   explotable,
+   cantidad,
+   nombre_local,
+   es_principal,
+   codigo_luna,
+   codigo_sustancia
+)
+vaues
+(
+   false,
+   23000.564,
+   'Agua Fuerte',
+   false,
+   9,
+   10
+),
+(
+   true,
+   20000000.987,
+   'Gasolina',
+   true,
+   4,
+   7
+),
+(
+   true,
+   300000000,
+   'Gasofa',
+   true,
+   6,
+   7
+);
+
+INSERT INTO Sustancia_en_Luna_se_encuentra_Estado_Sustancia
+(
+   codigo_sustancia_en_luna,
+   codigo_estado_sustancia
+)
+values
+(
+   1,
+   3
+),
+(
+   2,
+   2
+),
+(
+   3,
+   2
+);
+
+INSERT INTO Planta_en_Area
+(
+   codigo_area,
+   codigo_planta
+)
+values
+(
+   16,
+   21
+),
+(
+   12,
+   20
+),
+(
+   16,
+   2
+),
+(
+   10,
+   10
+),
+(
+   3,
+   1
+),
+(
+   5,
+   1
+),
+(
+   7,
+   16
+),
+(
+   4,
+   20
+),
+(
+   8,
+   11
+);
+
+INSERT INTO Planta_en_Area_come_Sustancia_en_Area
+(
+   codigo_planta_en_area,
+   codigo_sustancia_en_area
+)
+values
+(
+   9,
+   2
+),
+(
+   9,
+   1
+),
+(
+   2,
+   2
+),
+(
+   2,
+   3
+),
+(
+   3,
+   3
+);
+
+INSERT INTO Planta_en_Area_come_Planta_en_Area
+(
+   codigo_planta_en_area_depredador,
+   codigo_planta_en_area_presa
+)
+values
+(
+   9,
+   2
+),
+(
+   3,
+   2
+),
+(
+   7,
+   8
+),
+(
+   6,
+   3
+);
+
+INSERT INTO Especie_Animal_en_Area
+(
+   nombre_local,
+   codigo_especie_animal,
+   codigo_area
+)
+values
+(
+   
+),
