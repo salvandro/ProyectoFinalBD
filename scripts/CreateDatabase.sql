@@ -226,7 +226,9 @@ CREATE TABLE Simbolo
 (
     codigo INT AUTO_INCREMENT,
     significado VARCHAR(30),
-    figura BLOB
+    figura BLOB,
+
+    PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Personal
@@ -234,14 +236,18 @@ CREATE TABLE Personal
     codigo INT AUTO_INCREMENT,
     nombre VARCHAR(30),
     apellido_paterno VARCHAR(30),
-    apellido_materno VARCHAR(30)
+    apellido_materno VARCHAR(30),
+
+    PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Personal_Investigador
 (
     codigo_personal INT,
 
-    PRIMARY KEY (codigo_personal)
+    PRIMARY KEY (codigo_personal),
+
+    FOREIGN KEY (codigo_personal)
         REFERENCES Personal (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
@@ -301,13 +307,17 @@ CREATE TABLE Proyecto
     nombre VARCHAR(30),
     proposito VARCHAR (30),
     fecha_inicio DATE,
-    fecha_fin DATE
+    fecha_fin DATE,
+
+    PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Tipo_Proyecto
 (
     codigo INT AUTO_INCREMENT,
-    nombre VARCHAR(30)
+    nombre VARCHAR(30),
+
+    PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Sustancia_en_Sol
@@ -468,12 +478,12 @@ CREATE TABLE Planta_en_Area_come_Sustancia_en_Area
         REFERENCES Sustancia_en_Area (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
-) ENGINE = InnoDB:
+) ENGINE = InnoDB;
 
 CREATE TABLE Planta_en_Area_come_Planta_en_Area
 (
     codigo_planta_en_area_depredador INT,
-    codigo_planta_area_area_presa INT,
+    codigo_planta_en_area_presa INT,
 
     PRIMARY KEY (codigo_planta_en_area_depredador, codigo_planta_en_area_presa),
 
@@ -484,6 +494,45 @@ CREATE TABLE Planta_en_Area_come_Planta_en_Area
 
     FOREIGN KEY (codigo_planta_en_area_presa)
         REFERENCES Planta_en_Area (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+CREATE TABLE Especie_Animal_en_Area
+(
+    codigo INT AUTO_INCREMENT,
+    nombre_local VARCHAR(30),
+    codigo_especie_animal INT,
+    codigo_area INT,
+
+    PRIMARY KEY (codigo),
+
+    FOREIGN KEY (codigo_especie_animal)
+        REFERENCES Especie_Animal (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_area)
+        REFERENCES Area (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+CREATE TABLE Especie_Animal_en_Area_come_Especie_Animal_en_Area
+(
+    codigo_especie_animal_en_area_depredador INT,
+    codigo_especie_animal_en_area_presa INT,
+
+    PRIMARY KEY (codigo_especie_animal_en_area_depredador,
+                 codigo_especie_animal_en_area_presa),
+
+    FOREIGN KEY (codigo_especie_animal_en_area_depredador)
+        REFERENCES Especie_Animal_en_Area (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_especie_animal_en_area_presa)
+        REFERENCES Especie_Animal_en_Area (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
@@ -539,6 +588,45 @@ CREATE TABLE Planta_en_Luna_come_Planta_en_Luna
 
     FOREIGN KEY (codigo_planta_en_luna_presa)
         REFERENCES Planta_en_Luna (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+CREATE TABLE Especie_Animal_en_Luna
+(
+    codigo INT AUTO_INCREMENT,
+    nombre_local VARCHAR(30),
+    codigo_especie_animal INT,
+    codigo_luna INT,
+
+    PRIMARY KEY (codigo),
+
+    FOREIGN KEY (codigo_especie_animal)
+        REFERENCES Especie_Animal (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_luna)
+        REFERENCES Luna (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+CREATE TABLE Especie_Animal_en_Luna_come_Especie_Animal_en_Luna
+(
+    codigo_especie_animal_en_luna_depredador INT,
+    codigo_especie_animal_en_luna_presa INT,
+
+    PRIMARY KEY (codigo_especie_animal_en_luna_depredador,
+                 codigo_especie_animal_en_luna_presa),
+
+    FOREIGN KEY (codigo_especie_animal_en_luna_depredador)
+        REFERENCES Especie_Animal_en_Luna (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_especie_animal_en_luna_presa)
+        REFERENCES Especie_Animal_en_Luna (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
