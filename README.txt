@@ -87,25 +87,24 @@
    * cantidad
    * nombre_local
    * es_principal
-2. Sustancia_en_Luna
+3. Sustancia_en_Area
    * explotable
    * cantidad
    * nombre_local
    * es_principal
-3. Sustancia_en_Area
+5. Planta_en_Area
+   * nombre_local
+8. Especie_Animal_en_Area
+   * nombre_local
+   * numero_ejemplares
+2. Sustancia_en_Luna
    * explotable
    * cantidad
    * nombre_local
    * es_principal
 4. Planta_en_Luna
    * nombre_local
-5. Planta_en_Area
-   * nombre_local
-6. Parte_Cuerpo_de_Especie_Animal
 7. Especie_Animal_en_Luna
-   * nombre_local
-   * numero_ejemplares
-8. Especie_Animal_en_Area
    * nombre_local
    * numero_ejemplares
 

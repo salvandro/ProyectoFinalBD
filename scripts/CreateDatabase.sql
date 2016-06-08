@@ -320,6 +320,24 @@ CREATE TABLE Tipo_Proyecto
     PRIMARY KEY (codigo)
 ) ENGINE = InnoDB;
 
+CREATE TABLE Lenguaje_Escrito_tiene_Simbolo
+(
+    codigo_lenguaje_escrito INT,
+    codigo_simbolo INT,
+
+    PRIMARY KEY (codigo_lenguaje_escrito, codigo_simbolo),
+
+    FOREIGN KEY (codigo_lenguaje_escrito)
+        REFERENCES Lenguaje_Escrito (codigo_lenguaje)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_simbolo)
+        REFERENCES Simbolo (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
 CREATE TABLE Sustancia_en_Sol
 (
     codigo INT AUTO_INCREMENT,
@@ -498,10 +516,30 @@ CREATE TABLE Planta_en_Area_come_Planta_en_Area
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
+CREATE TABLE Planta_en_Area_habla_Lenguaje
+(
+    es_principal BOOLEAN,
+    codigo_planta_en_area INT,
+    codigo_lenguaje INT,
+
+    PRIMARY KEY (codigo_planta_en_area, codigo_lenguaje),
+
+    FOREIGN KEY (codigo_planta_en_area)
+        REFERENCES Planta_en_Area (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_lenguaje)
+        REFERENCES Lenguaje (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
 CREATE TABLE Especie_Animal_en_Area
 (
     codigo INT AUTO_INCREMENT,
     nombre_local VARCHAR(30),
+    numero_ejemplares INT,
     codigo_especie_animal INT,
     codigo_area INT,
 
@@ -553,6 +591,25 @@ CREATE TABLE Especie_Animal_en_Area_come_Especie_Animal_en_Area
 
     FOREIGN KEY (codigo_especie_animal_en_area_presa)
         REFERENCES Especie_Animal_en_Area (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+CREATE TABLE Especie_Animal_en_Area_habla_Lenguaje
+(
+    es_principal BOOLEAN,
+    codigo_especie_animal_en_area INT,
+    codigo_lenguaje INT,
+
+    PRIMARY KEY (codigo_especie_animal_en_area, codigo_lenguaje),
+
+    FOREIGN KEY (codigo_especie_animal_en_area)
+        REFERENCES Especie_Animal_en_Area (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_lenguaje)
+        REFERENCES Lenguaje (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
@@ -612,10 +669,30 @@ CREATE TABLE Planta_en_Luna_come_Planta_en_Luna
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
+CREATE TABLE Planta_en_Luna_habla_Lenguaje
+(
+    es_principal BOOLEAN,
+    codigo_planta_en_luna INT,
+    codigo_lenguaje INT,
+
+    PRIMARY KEY (codigo_planta_en_luna, codigo_lenguaje),
+
+    FOREIGN KEY (codigo_planta_en_luna)
+        REFERENCES Planta_en_Luna (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_lenguaje)
+        REFERENCES Lenguaje (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
 CREATE TABLE Especie_Animal_en_Luna
 (
     codigo INT AUTO_INCREMENT,
     nombre_local VARCHAR(30),
+    numero_ejemplares INT,
     codigo_especie_animal INT,
     codigo_luna INT,
 
@@ -667,6 +744,25 @@ CREATE TABLE Especie_Animal_en_Luna_come_Especie_Animal_en_Luna
 
     FOREIGN KEY (codigo_especie_animal_en_luna_presa)
         REFERENCES Especie_Animal_en_Luna (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+CREATE TABLE Especie_Animal_en_Luna_habla_Lenguaje
+(
+    es_principal BOOLEAN,
+    codigo_especie_animal_en_luna INT,
+    codigo_lenguaje INT,
+
+    PRIMARY KEY (codigo_especie_animal_en_luna, codigo_lenguaje),
+
+    FOREIGN KEY (codigo_especie_animal_en_luna)
+        REFERENCES Especie_Animal_en_Luna (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_lenguaje)
+        REFERENCES Lenguaje (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
