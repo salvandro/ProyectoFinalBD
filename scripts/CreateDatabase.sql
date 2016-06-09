@@ -325,14 +325,6 @@ CREATE TABLE Personal_Militar
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
-CREATE TABLE Tipo_Proyecto
-(
-    codigo INT AUTO_INCREMENT,
-    nombre VARCHAR(30),
-
-    PRIMARY KEY (codigo)
-) ENGINE = InnoDB;
-
 CREATE TABLE Equipo_Multidisciplinario
 (
     codigo INT AUTO_INCREMENT,
@@ -350,7 +342,6 @@ CREATE TABLE Proyecto
     fecha_fin DATE,
     codigo_proyecto_padre INT, # código del proyecto que es subproyecto.
     codigo_proyecto_continuado INT, # código del proyecto que continua.
-    codigo_tipo_proyecto INT,
 
     PRIMARY KEY (codigo),
 
@@ -362,28 +353,41 @@ CREATE TABLE Proyecto
     FOREIGN KEY (codigo_proyecto_continuado)
         REFERENCES Proyecto (codigo)
         ON UPDATE CASCADE
-        ON DELETE RESTRICT,
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
 
-    FOREIGN KEY (codigo_tipo_proyecto)
-        REFERENCES Tipo_Proyecto (codigo)
+CREATE TABLE Proyecto_Flora
+(
+    codigo_proyecto INT,
+
+    PRIMARY KEY (codigo_proyecto),
+
+    FOREIGN KEY (codigo_proyecto)
+        REFERENCES Proyecto (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
-CREATE TABLE Lenguaje_Escrito_tiene_Simbolo
+CREATE TABLE Proyecto_Fauna
 (
-    codigo_lenguaje_escrito INT,
-    codigo_simbolo INT,
+    codigo_proyecto INT,
 
-    PRIMARY KEY (codigo_lenguaje_escrito, codigo_simbolo),
+    PRIMARY KEY (codigo_proyecto),
 
-    FOREIGN KEY (codigo_lenguaje_escrito)
-        REFERENCES Lenguaje_Escrito (codigo_lenguaje)
+    FOREIGN KEY (codigo_proyecto)
+        REFERENCES Proyecto (codigo)
         ON UPDATE CASCADE
-        ON DELETE RESTRICT,
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
 
-    FOREIGN KEY (codigo_simbolo)
-        REFERENCES Simbolo (codigo)
+CREATE TABLE Proyecto_Sustancias
+(
+    codigo_proyecto INT,
+
+    PRIMARY KEY (codigo_proyecto),
+
+    FOREIGN KEY (codigo_proyecto)
+        REFERENCES Proyecto (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
@@ -813,6 +817,24 @@ CREATE TABLE Especie_Animal_en_Luna_habla_Lenguaje
 
     FOREIGN KEY (codigo_lenguaje)
         REFERENCES Lenguaje (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+CREATE TABLE Lenguaje_Escrito_tiene_Simbolo
+(
+    codigo_lenguaje_escrito INT,
+    codigo_simbolo INT,
+
+    PRIMARY KEY (codigo_lenguaje_escrito, codigo_simbolo),
+
+    FOREIGN KEY (codigo_lenguaje_escrito)
+        REFERENCES Lenguaje_Escrito (codigo_lenguaje)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_simbolo)
+        REFERENCES Simbolo (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
