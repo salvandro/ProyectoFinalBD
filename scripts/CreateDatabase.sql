@@ -158,8 +158,20 @@ CREATE TABLE Lenguaje
 (
     codigo INT AUTO_INCREMENT,
     nombre VARCHAR(30),
+    codigo_lenguaje_variante INT, # código del lenguaje del que es una variante.
+    codigo_lenguaje_especificacion, # código del lenguaje que es su especificación.
 
-    PRIMARY KEY (codigo)
+    PRIMARY KEY (codigo),
+
+    FOREIGN KEY (codigo_lenguaje_variante)
+        REFERENCES Lenguaje (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_lenguaje_especificacion)
+        REFERENCES Lenguaje (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
 CREATE TABLE Lenguaje_Gestos
@@ -289,6 +301,18 @@ CREATE TABLE Personal_Investigador_Geologo
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
+CREATE TABLE Personal_Mantenimiento
+(
+    codigo_personal INT,
+
+    PRIMARY KEY (codigo_personal),
+
+    FOREIGN KEY (codigo_personal)
+        REFERENCES Personal (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
 CREATE TABLE Personal_Militar
 (
     codigo_personal INT,
@@ -301,6 +325,22 @@ CREATE TABLE Personal_Militar
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
+CREATE TABLE Tipo_Proyecto
+(
+    codigo INT AUTO_INCREMENT,
+    nombre VARCHAR(30),
+
+    PRIMARY KEY (codigo)
+) ENGINE = InnoDB;
+
+CREATE TABLE Equipo_Multidisciplinario
+(
+    codigo INT AUTO_INCREMENT,
+    nombre VARCHAR(30),
+
+    PRIMARY KEY (codigo)
+) ENGINE = InnoDB;
+
 CREATE TABLE Proyecto
 (
     codigo INT AUTO_INCREMENT,
@@ -308,16 +348,26 @@ CREATE TABLE Proyecto
     proposito VARCHAR (30),
     fecha_inicio DATE,
     fecha_fin DATE,
+    codigo_proyecto_padre INT, # código del proyecto que es subproyecto.
+    codigo_proyecto_continuado INT, # código del proyecto que continua.
+    codigo_tipo_proyecto INT,
 
-    PRIMARY KEY (codigo)
-) ENGINE = InnoDB;
+    PRIMARY KEY (codigo),
 
-CREATE TABLE Tipo_Proyecto
-(
-    codigo INT AUTO_INCREMENT,
-    nombre VARCHAR(30),
+    FOREIGN KEY (codigo_proyecto_padre)
+        REFERENCES Proyecto (codigo)
+        ON DELETE CASCADE
+        ON DELETE RESTRICT,
 
-    PRIMARY KEY (codigo)
+    FOREIGN KEY (codigo_proyecto_continuado)
+        REFERENCES Proyecto (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_tipo_proyecto)
+        REFERENCES Tipo_Proyecto (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
 CREATE TABLE Lenguaje_Escrito_tiene_Simbolo
@@ -763,6 +813,30 @@ CREATE TABLE Especie_Animal_en_Luna_habla_Lenguaje
 
     FOREIGN KEY (codigo_lenguaje)
         REFERENCES Lenguaje (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
+CREATE TABLE Personal_participa_Equipo_Multidisciplinario
+(
+    codigo_personal INT,
+    codigo_equipo_disciplinario INT,
+    codigo_personal_superior INT,
+
+    PRIMARY KEY (codigo_personal, codigo_equipo_multidisciplinario),
+
+    FOREIGN KEY (codigo_personal)
+        REFERENCES Personal (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_equipo_multidisciplinario)
+        REFERENCES Equipo_Multidisciplinario (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_personal_supeior)
+        REFERENCES Personal (codigo)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
