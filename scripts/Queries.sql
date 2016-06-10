@@ -280,3 +280,29 @@ JOIN Sistema_Solar
 ON Sol.codigo_sistema_solar = Sistema_Solar.codigo)
 JOIN Galaxia
 ON Sistema_Solar.codigo_galaxia = Galaxia.codigo);
+
+SELECT codigo as 'Código', nombre_cientifico as 'Nombre Científico', 'Planta' as 'Tipo'
+FROM Planta
+WHERE codigo NOT IN (
+    SELECT codigo_planta_en_area_presa
+    FROM Planta_en_Area_come_Planta_en_Area
+    UNION
+    SELECT codigo_planta_en_area
+    FROM Especie_Animal_en_Area_come_Planta_en_Area
+    UNION
+    SELECT codigo_planta_en_luna_presa
+    FROM Planta_en_Luna_come_Planta_en_Luna
+    UNION
+    SELECT codigo_planta_en_luna
+    FROM Especie_Animal_en_Luna_come_Planta_en_Luna
+)
+UNION
+SELECT codigo as 'Código', nombre_cientifico as 'Nombre Científico', 'Especie Animal' as 'Tipo'
+FROM Especie_Animal
+WHERE codigo NOT IN (
+    SELECT codigo_especie_animal_en_area_presa
+    FROM Especie_Animal_en_Area_come_Especie_Animal_en_Area
+    UNION
+    SELECT codigo_especie_animal_en_luna_presa
+    FROM Especie_Animal_en_Luna_come_Especie_Animal_en_Luna
+);
