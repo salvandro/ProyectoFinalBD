@@ -518,6 +518,7 @@ CREATE TABLE Sustancia_en_Luna_se_encuantra_Estado_Sustancia
 CREATE TABLE Planta_en_Area
 (
     codigo INT AUTO_INCREMENT,
+    nombre_local VARCHAR(30),
     codigo_area INT,
     codigo_planta INT,
 
@@ -681,6 +682,7 @@ CREATE TABLE Especie_Animal_en_Area_habla_Lenguaje
 CREATE TABLE Planta_en_Luna
 (
     codigo INT AUTO_INCREMENT,
+    nombre_local VARCHAR(30),
     codigo_luna INT,
     codigo_planta INT,
 
@@ -901,6 +903,24 @@ CREATE TABLE Personal_participa_Equipo_Multidisciplinario
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
+CREATE TABLE Equipo_Multidisciplinario_realiza_Proyecto
+(
+    codigo_equipo_multidisciplinario INT,
+    codigo_proyecto INT,
+
+    PRIMARY KEY (codigo_equipo_multidisciplinario, codigo_proyecto),
+
+    FOREIGN KEY (codigo_equipo_multidisciplinario)
+        REFERENCES Equipo_Multidisciplinario (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+
+    FOREIGN KEY (codigo_proyecto)
+        REFERENCES Proyecto (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB;
+
 CREATE TABLE Proyecto_Sustancias_estudia_Sustancia_en_Sol
 (
     codigo_proyecto_sustancias INT,
@@ -919,7 +939,7 @@ CREATE TABLE Proyecto_Sustancias_estudia_Sustancia_en_Sol
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
-CREATE TABLE Proyecto_Flora_investiga_Planta_en_Area
+CREATE TABLE Proyecto_Flora_estudia_Planta_en_Area
 (
     codigo_proyecto_flora INT,
     codigo_planta_en_area INT,
