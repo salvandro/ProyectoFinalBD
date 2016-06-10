@@ -315,6 +315,7 @@ values
 (   'Investigar Criatura',   'Criatura Mitica Encontrada',   '2020/01/01',   '2020/10/30',NULL,NULL),
 (   'Residuos Planta',   'Planta Toxica Cuidado',   '2016/04/10',   '2016/04/30',NULL,NULL),
 (   'Investigar Planta',   'Planta Parlante Agrsiva',   '2016/05/30',   '2016/06/8',NULL,NULL);
+#(   'Nuevo Animal';
 UPDATE Proyecto
 set codigo_proyecto_continuado = 4
 where codigo = 2;
@@ -576,11 +577,17 @@ values
 (3,3,10),
 (6,3,10),
 (5,3,10);
+INSERT INTO Equipo_Multidisciplinario_realiza_Proyecto
+(   codigo_equipo_multidisciplinario,codigo_proyecto)
+values
+(   1, 2),
+(   2, 4),
+(   3, 3);
 INSERT INTO Proyecto_Sustancias_estudia_Sustancia_en_Sol
 (   codigo_proyecto_sustancias, codigo_sustancia_en_sol)
 values
 (   1,2);
-INSERT INTO Proyecto_Flora_investiga_Planta_en_Area
+INSERT INTO Proyecto_Flora_estudia_Planta_en_Area
 (   codigo_proyecto_flora,codigo_planta_en_area)
 values
 (   3, 5);

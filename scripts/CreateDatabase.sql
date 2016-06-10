@@ -497,7 +497,7 @@ CREATE TABLE Sustancia_en_Luna
         ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
-CREATE TABLE Sustancia_en_Luna_se_encuantra_Estado_Sustancia
+CREATE TABLE Sustancia_en_Luna_se_encuentra_Estado_Sustancia
 (
     codigo_sustancia_en_luna INT,
     codigo_estado_sustancia INT,
