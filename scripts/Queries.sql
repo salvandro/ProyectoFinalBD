@@ -1,17 +1,17 @@
-SELECT Proyecto.nombre as 'Proyecto',
-       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) as 'Personal',
-       Sustancia_en_Sol.nombre_local as 'Sustancia (nombre local)',
-       Sustancia.nombre_cientifico as 'Sustancia (nombre científico)',
-       '' as 'Planta (nombre local)',
-       '' as 'Planta (nombre científico)',
-       '' as 'Especie Animal (nombre_local)',
-       '' as 'Especie Animal (nombre científico)',
-       '' as 'Luna',
-       '' as 'Area',
-       '' as 'Planeta',
-       Sol.nombre as 'Sol',
-       Sistema_Solar.nombre as 'Sistema Solar',
-       Galaxia.nombre as 'Galaxia'
+SELECT Proyecto.nombre AS 'Proyecto',
+       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) AS 'Personal',
+       Sustancia_en_Sol.nombre_local AS 'Sustancia (nombre local)',
+       Sustancia.nombre_cientifico AS 'Sustancia (nombre científico)',
+       '' AS 'Planta (nombre local)',
+       '' AS 'Planta (nombre científico)',
+       '' AS 'Especie Animal (nombre_local)',
+       '' AS 'Especie Animal (nombre científico)',
+       '' AS 'Luna',
+       '' AS 'Área',
+       '' AS 'Planeta',
+       Sol.nombre AS 'Sol',
+       Sistema_Solar.nombre AS 'Sistema Solar',
+       Galaxia.nombre AS 'Galaxia'
 FROM (((((((((((Proyecto JOIN Equipo_Multidisciplinario_realiza_Proyecto
 ON Proyecto.codigo = Equipo_Multidisciplinario_realiza_Proyecto.codigo_proyecto)
 JOIN Equipo_Multidisciplinario
@@ -35,20 +35,20 @@ ON Sol.codigo_sistema_solar = Sistema_Solar.codigo)
 JOIN Galaxia
 ON Sistema_Solar.codigo_galaxia = Galaxia.codigo)
 UNION
-SELECT Proyecto.nombre as 'Proyecto',
-       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) as 'Personal',
-       Sustancia_en_Area.nombre_local as 'Sustancia (nombre local)',
-       Sustancia.nombre_cientifico as 'Sustancia (nombre científico)',
-       '' as 'Planta (nombre local)',
-       '' as 'Planta (nombre científico)',
-       '' as 'Especie Animal (nombre_local)',
-       '' as 'Especie Animal (nombre científico)',
-       '' as 'Luna',
-       Area.nombre as 'Area',
-       Planeta.nombre as 'Planeta',
-       '' as 'Sol',
-       Sistema_Solar.nombre as 'Sistema Solar',
-       Galaxia.nombre as 'Galaxia'
+SELECT Proyecto.nombre AS 'Proyecto',
+       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) AS 'Personal',
+       Sustancia_en_Area.nombre_local AS 'Sustancia (nombre local)',
+       Sustancia.nombre_cientifico AS 'Sustancia (nombre científico)',
+       '' AS 'Planta (nombre local)',
+       '' AS 'Planta (nombre científico)',
+       '' AS 'Especie Animal (nombre_local)',
+       '' AS 'Especie Animal (nombre científico)',
+       '' AS 'Luna',
+       Area.nombre AS 'Área',
+       Planeta.nombre AS 'Planeta',
+       '' AS 'Sol',
+       Sistema_Solar.nombre AS 'Sistema Solar',
+       Galaxia.nombre AS 'Galaxia'
 FROM (((((((((((((Proyecto JOIN Equipo_Multidisciplinario_realiza_Proyecto
 ON Proyecto.codigo = Equipo_Multidisciplinario_realiza_Proyecto.codigo_proyecto)
 JOIN Equipo_Multidisciplinario
@@ -76,20 +76,20 @@ ON Sol.codigo_sistema_solar = Sistema_Solar.codigo)
 JOIN Galaxia
 ON Sistema_Solar.codigo_galaxia = Galaxia.codigo)
 UNION
-SELECT Proyecto.nombre as 'Proyecto',
-       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) as 'Personal',
-       Sustancia_en_Luna.nombre_local as 'Sustancia (nombre local)',
-       Sustancia.nombre_cientifico as 'Sustancia (nombre científico)',
-       '' as 'Planta (nombre local)',
-       '' as 'Planta (nombre científico)',
-       '' as 'Especie Animal (nombre_local)',
-       '' as 'Especie Animal (nombre científico)',
-       Luna.nombre as 'Luna',
-       '' as 'Area',
-       '' as 'Planeta',
-       '' as 'Sol',
-       Sistema_Solar.nombre as 'Sistema Solar',
-       Galaxia.nombre as 'Galaxia'
+SELECT Proyecto.nombre AS 'Proyecto',
+       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) AS 'Personal',
+       Sustancia_en_Luna.nombre_local AS 'Sustancia (nombre local)',
+       Sustancia.nombre_cientifico AS 'Sustancia (nombre científico)',
+       '' AS 'Planta (nombre local)',
+       '' AS 'Planta (nombre científico)',
+       '' AS 'Especie Animal (nombre_local)',
+       '' AS 'Especie Animal (nombre científico)',
+       Luna.nombre AS 'Luna',
+       '' AS 'Área',
+       '' AS 'Planeta',
+       '' AS 'Sol',
+       Sistema_Solar.nombre AS 'Sistema Solar',
+       Galaxia.nombre AS 'Galaxia'
 FROM (((((((((((((Proyecto JOIN Equipo_Multidisciplinario_realiza_Proyecto
 ON Proyecto.codigo = Equipo_Multidisciplinario_realiza_Proyecto.codigo_proyecto)
 JOIN Equipo_Multidisciplinario
@@ -117,20 +117,20 @@ ON Sol.codigo_sistema_solar = Sistema_Solar.codigo)
 JOIN Galaxia
 ON Sistema_Solar.codigo_galaxia = Galaxia.codigo)
 UNION
-SELECT Proyecto.nombre as 'Proyecto',
-       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) as 'Personal',
-       '' as 'Sustancia (nombre local)',
-       '' as 'Sustancia (nombre científico)',
-       Planta_en_Area.nombre_local as 'Planta (nombre local)',
-       Planta.nombre_cientifico as 'Planta (nombre científico)',
-       '' as 'Especie Animal (nombre_local)',
-       '' as 'Especie Animal (nombre científico)',
-       '' as 'Luna',
-       Area.nombre as 'Area',
-       Planeta.nombre as 'Planeta',
-       '' as 'Sol',
-       Sistema_Solar.nombre as 'Sistema Solar',
-       Galaxia.nombre as 'Galaxia'
+SELECT Proyecto.nombre AS 'Proyecto',
+       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) AS 'Personal',
+       '' AS 'Sustancia (nombre local)',
+       '' AS 'Sustancia (nombre científico)',
+       Planta_en_Area.nombre_local AS 'Planta (nombre local)',
+       Planta.nombre_cientifico AS 'Planta (nombre científico)',
+       '' AS 'Especie Animal (nombre_local)',
+       '' AS 'Especie Animal (nombre científico)',
+       '' AS 'Luna',
+       Area.nombre AS 'Área',
+       Planeta.nombre AS 'Planeta',
+       '' AS 'Sol',
+       Sistema_Solar.nombre AS 'Sistema Solar',
+       Galaxia.nombre AS 'Galaxia'
 FROM (((((((((((((Proyecto JOIN Equipo_Multidisciplinario_realiza_Proyecto
 ON Proyecto.codigo = Equipo_Multidisciplinario_realiza_Proyecto.codigo_proyecto)
 JOIN Equipo_Multidisciplinario
@@ -158,20 +158,20 @@ ON Sol.codigo_sistema_solar = Sistema_Solar.codigo)
 JOIN Galaxia
 ON Sistema_Solar.codigo_galaxia = Galaxia.codigo)
 UNION
-SELECT Proyecto.nombre as 'Proyecto',
-       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) as 'Personal',
-       '' as 'Sustancia (nombre local)',
-       '' as 'Sustancia (nombre científico)',
-       Planta_en_Luna.nombre_local as 'Planta (nombre local)',
-       Planta.nombre_cientifico as 'Planta (nombre científico)',
-       '' as 'Especie Animal (nombre_local)',
-       '' as 'Especie Animal (nombre científico)',
-       Luna.nombre as 'Luna',
-       '' as 'Area',
-       '' as 'Planeta',
-       '' as 'Sol',
-       Sistema_Solar.nombre as 'Sistema Solar',
-       Galaxia.nombre as 'Galaxia'
+SELECT Proyecto.nombre AS 'Proyecto',
+       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) AS 'Personal',
+       '' AS 'Sustancia (nombre local)',
+       '' AS 'Sustancia (nombre científico)',
+       Planta_en_Luna.nombre_local AS 'Planta (nombre local)',
+       Planta.nombre_cientifico AS 'Planta (nombre científico)',
+       '' AS 'Especie Animal (nombre_local)',
+       '' AS 'Especie Animal (nombre científico)',
+       Luna.nombre AS 'Luna',
+       '' AS 'Área',
+       '' AS 'Planeta',
+       '' AS 'Sol',
+       Sistema_Solar.nombre AS 'Sistema Solar',
+       Galaxia.nombre AS 'Galaxia'
 FROM (((((((((((((Proyecto JOIN Equipo_Multidisciplinario_realiza_Proyecto
 ON Proyecto.codigo = Equipo_Multidisciplinario_realiza_Proyecto.codigo_proyecto)
 JOIN Equipo_Multidisciplinario
@@ -199,20 +199,20 @@ ON Sol.codigo_sistema_solar = Sistema_Solar.codigo)
 JOIN Galaxia
 ON Sistema_Solar.codigo_galaxia = Galaxia.codigo)
 UNION
-SELECT Proyecto.nombre as 'Proyecto',
-       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) as 'Personal',
-       '' as 'Sustancia (nombre local)',
-       '' as 'Sustancia (nombre científico)',
-       '' as 'Planta (nombre local)',
-       '' as 'Planta (nombre científico)',
-       Especie_Animal_en_Area.nombre_local as 'Especie Animal (nombre_local)',
-       Especie_Animal.nombre_cientifico as 'Especie Animal (nombre científico)',
-       '' as 'Luna',
-       Area.nombre as 'Area',
-       Planeta.nombre as 'Planeta',
-       '' as 'Sol',
-       Sistema_Solar.nombre as 'Sistema Solar',
-       Galaxia.nombre as 'Galaxia'
+SELECT Proyecto.nombre AS 'Proyecto',
+       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) AS 'Personal',
+       '' AS 'Sustancia (nombre local)',
+       '' AS 'Sustancia (nombre científico)',
+       '' AS 'Planta (nombre local)',
+       '' AS 'Planta (nombre científico)',
+       Especie_Animal_en_Area.nombre_local AS 'Especie Animal (nombre_local)',
+       Especie_Animal.nombre_cientifico AS 'Especie Animal (nombre científico)',
+       '' AS 'Luna',
+       Area.nombre AS 'Área',
+       Planeta.nombre AS 'Planeta',
+       '' AS 'Sol',
+       Sistema_Solar.nombre AS 'Sistema Solar',
+       Galaxia.nombre AS 'Galaxia'
 FROM (((((((((((((Proyecto JOIN Equipo_Multidisciplinario_realiza_Proyecto
 ON Proyecto.codigo = Equipo_Multidisciplinario_realiza_Proyecto.codigo_proyecto)
 JOIN Equipo_Multidisciplinario
@@ -240,20 +240,20 @@ ON Sol.codigo_sistema_solar = Sistema_Solar.codigo)
 JOIN Galaxia
 ON Sistema_Solar.codigo_galaxia = Galaxia.codigo)
 UNION
-SELECT Proyecto.nombre as 'Proyecto',
-       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) as 'Personal',
-       '' as 'Sustancia (nombre local)',
-       '' as 'Sustancia (nombre científico)',
-       '' as 'Planta (nombre local)',
-       '' as 'Planta (nombre científico)',
-       Especie_Animal_en_Luna.nombre_local as 'Especie Animal (nombre_local)',
-       Especie_Animal.nombre_cientifico as 'Especie Animal (nombre científico)',
-       Luna.nombre as 'Luna',
-       '' as 'Area',
-       '' as 'Planeta',
-       '' as 'Sol',
-       Sistema_Solar.nombre as 'Sistema Solar',
-       Galaxia.nombre as 'Galaxia'
+SELECT Proyecto.nombre AS 'Proyecto',
+       CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) AS 'Personal',
+       '' AS 'Sustancia (nombre local)',
+       '' AS 'Sustancia (nombre científico)',
+       '' AS 'Planta (nombre local)',
+       '' AS 'Planta (nombre científico)',
+       Especie_Animal_en_Luna.nombre_local AS 'Especie Animal (nombre_local)',
+       Especie_Animal.nombre_cientifico AS 'Especie Animal (nombre científico)',
+       Luna.nombre AS 'Luna',
+       '' AS 'Área',
+       '' AS 'Planeta',
+       '' AS 'Sol',
+       Sistema_Solar.nombre AS 'Sistema Solar',
+       Galaxia.nombre AS 'Galaxia'
 FROM (((((((((((((Proyecto JOIN Equipo_Multidisciplinario_realiza_Proyecto
 ON Proyecto.codigo = Equipo_Multidisciplinario_realiza_Proyecto.codigo_proyecto)
 JOIN Equipo_Multidisciplinario
@@ -281,7 +281,7 @@ ON Sol.codigo_sistema_solar = Sistema_Solar.codigo)
 JOIN Galaxia
 ON Sistema_Solar.codigo_galaxia = Galaxia.codigo);
 
-SELECT codigo as 'Código', nombre_cientifico as 'Nombre Científico', 'Planta' as 'Tipo'
+SELECT codigo AS 'Código', nombre_cientifico AS 'Nombre Científico', 'Planta' AS 'Tipo'
 FROM Planta
 WHERE codigo NOT IN (
     SELECT codigo_planta_en_area_presa
@@ -297,7 +297,7 @@ WHERE codigo NOT IN (
     FROM Especie_Animal_en_Luna_come_Planta_en_Luna
 )
 UNION
-SELECT codigo as 'Código', nombre_cientifico as 'Nombre Científico', 'Especie Animal' as 'Tipo'
+SELECT codigo AS 'Código', nombre_cientifico AS 'Nombre Científico', 'Especie Animal' AS 'Tipo'
 FROM Especie_Animal
 WHERE codigo NOT IN (
     SELECT codigo_especie_animal_en_area_presa
@@ -306,3 +306,37 @@ WHERE codigo NOT IN (
     SELECT codigo_especie_animal_en_luna_presa
     FROM Especie_Animal_en_Luna_come_Especie_Animal_en_Luna
 );
+
+SELECT Area.nombre as 'Área', Planeta.nombre as 'Planeta'
+FROM (((((Sustancia_en_Area JOIN Sustancia
+ON Sustancia_en_Area.codigo_sustancia = Sustancia.codigo AND (Sustancia.nombre_cientifico = 'Metano' OR Sustancia.nombre_cientifico = 'Oxigeno'))
+JOIN Area
+ON Sustancia_en_Area.codigo_area = Area.codigo)
+JOIN Planeta
+ON Area.codigo_planeta = Planeta.codigo)
+JOIN Sustancia_en_Area_se_encuentra_Estado_Sustancia
+ON Sustancia_en_Area.codigo = Sustancia_en_Area_se_encuentra_Estado_Sustancia.codigo_sustancia_en_area)
+JOIN Estado_Sustancia
+ON Sustancia_en_Area_se_encuentra_Estado_Sustancia.codigo_estado_sustancia = Estado_Sustancia.codigo AND Estado_Sustancia.nombre = 'Líquido');
+
+SELECT Lenguaje.codigo as 'Código', Lenguaje.nombre as 'Lenguaje'
+FROM Lenguaje
+WHERE codigo in (
+    SELECT Planta_en_Area_habla_Lenguaje.codigo_lenguaje
+    FROM ((Planta_en_Area_habla_Lenguaje JOIN Planta_en_Area
+    ON Planta_en_Area_habla_Lenguaje.codigo_planta_en_area = Planta_en_Area.codigo)
+    JOIN Area
+    ON Planta_en_Area.codigo_area = Area.codigo AND Area.nombre = 'Norte América')
+    JOIN Planeta
+    ON Area.codigo_planeta = Planeta.codigo AND Planeta.nombre = 'Tierra'
+    UNION
+    SELECT Especie_Animal_en_Area_habla_Lenguaje.codigo_lenguaje
+    FROM ((Especie_Animal_en_Area_habla_Lenguaje JOIN Especie_Animal_en_Area
+    ON Especie_Animal_en_Area_habla_Lenguaje.codigo_especie_animal_en_area = Especie_Animal_en_Area.codigo)
+    JOIN Area
+    ON Especie_Animal_en_Area.codigo_area = Area.codigo AND Area.nombre = 'Norte América')
+    JOIN Planeta
+    ON Area.codigo_planeta = Planeta.codigo AND Planeta.nombre = 'Tierra'
+);
+
+
