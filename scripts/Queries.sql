@@ -307,7 +307,7 @@ WHERE codigo NOT IN (
     FROM Especie_Animal_en_Luna_come_Especie_Animal_en_Luna
 );
 
-SELECT Area.nombre as 'Área', Planeta.nombre as 'Planeta'
+SELECT Area.nombre AS 'Área', Planeta.nombre AS 'Planeta'
 FROM (((((Sustancia_en_Area JOIN Sustancia
 ON Sustancia_en_Area.codigo_sustancia = Sustancia.codigo AND (Sustancia.nombre_cientifico = 'Metano' OR Sustancia.nombre_cientifico = 'Oxigeno'))
 JOIN Area
@@ -319,9 +319,9 @@ ON Sustancia_en_Area.codigo = Sustancia_en_Area_se_encuentra_Estado_Sustancia.co
 JOIN Estado_Sustancia
 ON Sustancia_en_Area_se_encuentra_Estado_Sustancia.codigo_estado_sustancia = Estado_Sustancia.codigo AND Estado_Sustancia.nombre = 'Líquido');
 
-SELECT Lenguaje.codigo as 'Código', Lenguaje.nombre as 'Lenguaje'
+SELECT Lenguaje.codigo AS 'Código', Lenguaje.nombre AS 'Lenguaje'
 FROM Lenguaje
-WHERE codigo in (
+WHERE codigo IN (
     SELECT Planta_en_Area_habla_Lenguaje.codigo_lenguaje
     FROM ((Planta_en_Area_habla_Lenguaje JOIN Planta_en_Area
     ON Planta_en_Area_habla_Lenguaje.codigo_planta_en_area = Planta_en_Area.codigo)
@@ -339,4 +339,68 @@ WHERE codigo in (
     ON Area.codigo_planeta = Planeta.codigo AND Planeta.nombre = 'Tierra'
 );
 
-
+Select Personal.codigo AS 'Código', CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) AS 'Personal', 'Militar' AS 'Tipo'
+FROM (((((Personal LEFT JOIN Personal_participa_Equipo_Multidisciplinario
+ON Personal.codigo = Personal_Participa_Equipo_Multidisciplinario.codigo_personal)
+JOIN Equipo_Multidisciplinario
+ON Personal_participa_Equipo_Multidisciplinario.codigo_equipo_multidisciplinario = Equipo_Multidisciplinario.codigo)
+JOIN Equipo_Multidisciplinario_realiza_Proyecto
+ON Equipo_Multidisciplinario.codigo = Equipo_Multidisciplinario_realiza_Proyecto.codigo_equipo_multidisciplinario)
+JOIN Proyecto
+ON Equipo_Multidisciplinario_realiza_Proyecto.codigo_proyecto = Proyecto.codigo AND Proyecto.fecha_fin < '2013-05-04')
+JOIN Personal_Militar
+ON Personal.codigo = Personal_Militar.codigo_personal)
+UNION
+Select Personal.codigo AS 'Código', CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) AS 'Personal', 'Mantenimiento' AS 'Tipo'
+FROM (((((Personal LEFT JOIN Personal_participa_Equipo_Multidisciplinario
+ON Personal.codigo = Personal_Participa_Equipo_Multidisciplinario.codigo_personal)
+JOIN Equipo_Multidisciplinario
+ON Personal_participa_Equipo_Multidisciplinario.codigo_equipo_multidisciplinario = Equipo_Multidisciplinario.codigo)
+JOIN Equipo_Multidisciplinario_realiza_Proyecto
+ON Equipo_Multidisciplinario.codigo = Equipo_Multidisciplinario_realiza_Proyecto.codigo_equipo_multidisciplinario)
+JOIN Proyecto
+ON Equipo_Multidisciplinario_realiza_Proyecto.codigo_proyecto = Proyecto.codigo AND Proyecto.fecha_fin < '2013-05-04')
+JOIN Personal_Mantenimiento
+ON Personal.codigo = Personal_Mantenimiento.codigo_personal)
+UNION
+Select Personal.codigo AS 'Código', CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) AS 'Personal', 'Investigador Zoólogo' AS 'Tipo'
+FROM ((((((Personal LEFT JOIN Personal_participa_Equipo_Multidisciplinario
+ON Personal.codigo = Personal_Participa_Equipo_Multidisciplinario.codigo_personal)
+JOIN Equipo_Multidisciplinario
+ON Personal_participa_Equipo_Multidisciplinario.codigo_equipo_multidisciplinario = Equipo_Multidisciplinario.codigo)
+JOIN Equipo_Multidisciplinario_realiza_Proyecto
+ON Equipo_Multidisciplinario.codigo = Equipo_Multidisciplinario_realiza_Proyecto.codigo_equipo_multidisciplinario)
+JOIN Proyecto
+ON Equipo_Multidisciplinario_realiza_Proyecto.codigo_proyecto = Proyecto.codigo AND Proyecto.fecha_fin < '2013-05-04')
+JOIN Personal_Investigador
+ON Personal.codigo = Personal_Investigador.codigo_personal)
+JOIN Personal_Investigador_Zoologo
+ON Personal_Investigador.codigo_personal = Personal_Investigador_Zoologo.codigo_personal_investigador)
+UNION
+Select Personal.codigo AS 'Código', CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) AS 'Personal', 'Investigador Botánico' AS 'Tipo'
+FROM ((((((Personal LEFT JOIN Personal_participa_Equipo_Multidisciplinario
+ON Personal.codigo = Personal_Participa_Equipo_Multidisciplinario.codigo_personal)
+JOIN Equipo_Multidisciplinario
+ON Personal_participa_Equipo_Multidisciplinario.codigo_equipo_multidisciplinario = Equipo_Multidisciplinario.codigo)
+JOIN Equipo_Multidisciplinario_realiza_Proyecto
+ON Equipo_Multidisciplinario.codigo = Equipo_Multidisciplinario_realiza_Proyecto.codigo_equipo_multidisciplinario)
+JOIN Proyecto
+ON Equipo_Multidisciplinario_realiza_Proyecto.codigo_proyecto = Proyecto.codigo AND Proyecto.fecha_fin < '2013-05-04')
+JOIN Personal_Investigador
+ON Personal.codigo = Personal_Investigador.codigo_personal)
+JOIN Personal_Investigador_Botanico
+ON Personal_Investigador.codigo_personal = Personal_Investigador_Botanico.codigo_personal_investigador)
+UNION
+Select Personal.codigo AS 'Código', CONCAT(Personal.nombre, ' ', Personal.apellido_paterno, ' ', Personal.apellido_materno) AS 'Personal', 'Investigador Geólogo' AS 'Tipo'
+FROM ((((((Personal LEFT JOIN Personal_participa_Equipo_Multidisciplinario
+ON Personal.codigo = Personal_Participa_Equipo_Multidisciplinario.codigo_personal)
+JOIN Equipo_Multidisciplinario
+ON Personal_participa_Equipo_Multidisciplinario.codigo_equipo_multidisciplinario = Equipo_Multidisciplinario.codigo)
+JOIN Equipo_Multidisciplinario_realiza_Proyecto
+ON Equipo_Multidisciplinario.codigo = Equipo_Multidisciplinario_realiza_Proyecto.codigo_equipo_multidisciplinario)
+JOIN Proyecto
+ON Equipo_Multidisciplinario_realiza_Proyecto.codigo_proyecto = Proyecto.codigo AND Proyecto.fecha_fin < '2013-05-04')
+JOIN Personal_Investigador
+ON Personal.codigo = Personal_Investigador.codigo_personal)
+JOIN Personal_Investigador_Geologo
+ON Personal_Investigador.codigo_personal = Personal_Investigador_Geologo.codigo_personal_investigador);
